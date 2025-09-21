@@ -36,7 +36,7 @@ async function loadPostContent(postId) {
   const post = posts.find(p => p.id === postId);
   if (!post) throw new Error(`Post with id ${postId} not found`);
 
-  const r = await fetch(`https:raw.githubusercontent.com/saipr0/retrospective/main/posts/${post.folder}/index.md`);
+  const r = await fetch(`https://raw.githubusercontent.com/saipr0/retrospective/main/posts/${post.folder}/index.md`);
   const markdown = await r.text();
 
   const { title, publishDate, content } = parseMarkdown(markdown);
