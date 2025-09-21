@@ -1,0 +1,59 @@
+[
+  {
+    "id": "home-server",
+    "title": "Home Server",
+    "description": "Immich is wayyyy better than Google Photos and Syncthing wayyyy better than Google Drive.",
+    "publishDate": "2025 • 02",
+    "tags": [
+      "Server"
+    ],
+    "folder": "home_server"
+  },
+  {
+    "id": "linux-experience",
+    "title": "Linux Experience",
+    "description": "I know the meme that Linux users have to tell everyone that they use Linux. So i'll do it as well lol",
+    "publishDate": "2024 • 12",
+    "tags": [
+      "Linux"
+    ],
+    "folder": "linux_experience"
+  },
+  {
+    "id": "perceptron",
+    "title": "Perceptron Learning Algorithm",
+    "description": "Implementation of Perceptron Learning Algorithm in Python",
+    "publishDate": "2023 • 08",
+    "tags": [
+      "Deep Learning",
+      "Perceptron",
+      "Python",
+      "Neural Networks"
+    ],
+    "folder": "perceptron"
+  },
+  {
+    "id": "tf-pt-setup",
+    "title": "Setting up Tensorflow GPU and Pytorch in Windows WSL2",
+    "description": "Guide on properly setting up Tensorflow and Pytorch in Windows Subsystem for Linux 2 (WSL2)",
+    "publishDate": "2023 • 08",
+    "tags": [
+      "Deep Learning",
+      "Tensorflow",
+      "Pytorch",
+      "WSL2",
+      "Python"
+    ],
+    "folder": "tf_pt_setup"
+  },
+  {
+    "id": "first-note",
+    "title": "First Note",
+    "description": "What is even happening? retro-spective? blogs? journals? notes? what is this? This note is to answer my own questions about what I am doing here.",
+    "publishDate": "2023 • 06",
+    "tags": [
+      "thoughts"
+    ],
+    "folder": "first_note"
+  }
+]

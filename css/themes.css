@@ -1,0 +1,16 @@
+.dark {
+    background-color: #1d1f21;
+    color: #c5c8c6;
+}
+
+.dark header {
+    border-bottom-color: #444;
+}
+
+.dark nav a {
+    color: #c5c8c6;
+}
+
+.dark nav a:hover {
+    color: #66ccff;
+}

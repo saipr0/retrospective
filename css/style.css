@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'JetBrains Mono Nerd Font';
+    src: url('./assets/fonts/JetBrainsMono/JetBrainsMonoNerdFont-Regular.ttf');
+}
+
+:root {
+  --font-main: 'JetBrains Mono Nerd Font', monospace;
+  --icon-size: 1.2rem;
+  --bg-color: #fafafa;
+  --border-color: #ddd;
+  --link-hover: #0066cc;
+  --primary-color: #333;
+  --primary-dim: #222;
+  --accent-color: #ff6b35;
+  --accent-dim: #cc4420;
+}
+
+html.dark {
+  --bg-color: #171717;
+  --border-color: #444;
+  --link-hover: #66ccff;
+  --primary-color: #B6B6B6;
+  --primary-dim: #868686;
+  --accent-color: #ff8c5a;
+  --accent-dim: #ff6b35;
+}
+
+/* Misc */
+.nerd-icon {
+  font-size: var(--icon-size);
+}
+
+/* Layout Tags */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0rem;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--primary-dim);
+  text-decoration: none;
+}
+
+a {
+  color: var(--primary-dim);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+#posts-list a {
+  color: var(--primary-color);
+}
+
+/* Button */
+.btn {
+  font-family: var(--font-main);
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--primary-dim);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: var(--icon-size);
+}
+
+.btn-icon {
+  font-size: var(--icon-size);
+  padding: 0.3rem 1.03rem 0.3rem 0.61rem;
+}
+
+.btn:hover {
+  background-color: var(--border-color);
+}
+
+/* Post Content Styling */
+h3, h3 a {
+  color: var(--primary-dim);
+  padding: 0.7rem 0;
+  text-decoration: none;
+}
+
+.post-meta {
+  color: var(--primary-dim);
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.post-header {
+  margin: 2rem 0 2rem 0;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-body {
+  line-height: 1.8;
+}
+
+.post-body h2 {
+  margin: 2rem 0 1rem 0;
+  color: var(--primary-dim);
+}
+
+.post-body p {
+  margin-bottom: 1rem;
+}
+
+.post-body blockquote {
+  border-left: 4px solid var(--border-color);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+/* Code Styling */
+.post-body pre[class*="language-"] {
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+/* Inline Code (not handled by Prism) */
+.post-body p code:not([class*="language-"]) {
+  background-color: var(--border-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* Copy icon */
+div.code-toolbar > .toolbar > .toolbar-item > button {
+  background: transparent !important;
+  font-size: 0 !important;
+  padding: 0px 8px !important;
+  box-shadow: none !important;
+}
+
+/* Default copy icon */
+div.code-toolbar > .toolbar > .toolbar-item > button::before {
+  font-size: var(--icon-size) !important;
+  content: '\f018f';
+}
