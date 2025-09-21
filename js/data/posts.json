@@ -1,5 +1,16 @@
 [
   {
+    "id": "internet-needs-to-be-simple",
+    "title": "Internet Needs To Be Simple",
+    "description": "simple html, css, js just works - we dont need frameworks",
+    "publishDate": "2025 • 09",
+    "tags": [
+      "Web",
+      "Coding"
+    ],
+    "folder": "internet_needs_to_be_simple"
+  },
+  {
     "id": "home-server",
     "title": "Home Server",
     "description": "Immich is wayyyy better than Google Photos and Syncthing wayyyy better than Google Drive.",
