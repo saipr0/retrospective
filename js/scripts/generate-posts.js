@@ -29,7 +29,7 @@ function extractFrontmatter(content) {
 }
 
 function generatePostsJson() {
-  const postsDir = path.join(__dirname, '..', 'posts');
+  const postsDir = path.join(__dirname, '..', '..', 'posts');
   const dataDir = path.join(__dirname, '..', 'data');
   const posts = [];
 
@@ -60,7 +60,7 @@ function generatePostsJson() {
     }
   });
 
-  posts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  posts.sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 
   const outputPath = path.join(dataDir, 'posts.json')
   fs.writeFileSync(outputPath, JSON.stringify(posts, null, 2));

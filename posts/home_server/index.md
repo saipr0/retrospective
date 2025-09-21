@@ -1,7 +1,7 @@
 ---
 title: "Home Server"
 description: "Immich is wayyyy better than Google Photos and Syncthing wayyyy better than Google Drive."
-publishDate: "15 Feb 2025"
+publishDate: "2025 • 02"
 tags: ["Server"]
 ---
 

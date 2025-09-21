@@ -1,7 +1,7 @@
 ---
 title: "Perceptron Learning Algorithm"
 description: "Implementation of Perceptron Learning Algorithm in Python"
-publishDate: "9 Aug 2023"
+publishDate: "2023 • 08"
 tags: ["Deep Learning", "Perceptron", "Python", "Neural Networks"]
 ---
 
