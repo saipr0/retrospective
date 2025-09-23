@@ -11,6 +11,17 @@
     "folder": "internet_needs_to_be_simple"
   },
   {
+    "id": "neovim-setup",
+    "title": "Neovim Setup",
+    "description": "Finally i completed it! i think...",
+    "publishDate": "2025 • 09",
+    "tags": [
+      "Customization",
+      "Coding"
+    ],
+    "folder": "neovim_setup"
+  },
+  {
     "id": "home-server",
     "title": "Home Server",
     "description": "Immich is wayyyy better than Google Photos and Syncthing wayyyy better than Google Drive.",
