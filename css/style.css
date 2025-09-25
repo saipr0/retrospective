@@ -6,28 +6,36 @@
 :root {
   --font-main: 'JetBrains Mono Nerd Font', monospace;
   --icon-size: 1.2rem;
-  --bg-color: #fafafa;
+  --bg-color: rgb(239, 240, 242);
   --border-color: #ddd;
   --link-hover: #0066cc;
   --primary-color: #333;
   --primary-dim: #222;
-  --accent-color: #ff6b35;
-  --accent-dim: #cc4420;
+  --accent-color: #2bbc89;
+  --accent-dim: #ccffb6;
 }
 
 html.dark {
-  --bg-color: #171717;
+  --bg-color: rgb(16, 15, 15);
   --border-color: #444;
   --link-hover: #66ccff;
   --primary-color: #B6B6B6;
   --primary-dim: #868686;
-  --accent-color: #ff8c5a;
-  --accent-dim: #ff6b35;
+  --accent-color: #2bbc89;
+  --accent-dim: #ccffb6;
 }
 
 /* Misc */
 .nerd-icon {
   font-size: var(--icon-size);
+}
+
+.def-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 8px;
 }
 
 /* Layout Tags */

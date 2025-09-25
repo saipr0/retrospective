@@ -21,5 +21,16 @@ export function initTheme() {
     localStorage.setItem('theme', theme);
     toggle.textContent = dark ? '\uf522' : '\uf4ee';
     switchPrismTheme(dark);
+    initAboutTheme();
   });
+}
+
+export function initAboutTheme() {
+  const aboutBanner = document.getElementById('about-banner');
+  const isDark = document.documentElement.classList.contains('dark');
+  if (aboutBanner) {
+    aboutBanner.src = isDark
+      ? 'css/assets/images/social-card.png'
+      : 'css/assets/images/social-card-2.png';
+  }
 }
