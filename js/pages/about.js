@@ -1,4 +1,5 @@
 import { initAboutTheme } from '../theme.js';
+import { makeLinksExternal } from '../utils.js';
 
 export async function loadAbout() {
   const r = await fetch(`./content/about.md`);
@@ -11,4 +12,5 @@ export async function loadAbout() {
   `;
 
   initAboutTheme();
+  makeLinksExternal('#about-content');
 }

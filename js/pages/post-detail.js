@@ -1,3 +1,5 @@
+import { makeLinksExternal } from '../utils.js';
+
 // metadata
 async function fetchPosts() {
   const r = await fetch('js/data/posts.json');
@@ -58,6 +60,7 @@ async function loadAndDisplayPost(postId) {
       <div class="post-body">${htmlContent}</div>
     `;
     if (typeof Prism !== 'undefined') Prism.highlightAll();
+    makeLinksExternal('#post-content');
   } catch (error) {
     console.error('Error loading post:', error);
     document.getElementById('post-content').innerHTML = '<p>Error loading post.</p>';

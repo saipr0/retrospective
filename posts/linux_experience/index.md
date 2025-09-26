@@ -15,13 +15,13 @@ Why suddenly the shift? well seeing how Microsoft is pushing their AI stuff, cop
 I can go on about the issues but this isn't about that. And honestly these aren't even the real reason for my switch to Linux. It's because i discovered something called window managers, specifically GlazeWM in windows.
 
 ## Window Managers
-<a href="https://github.com/glzr-io/glazewm" target="_blank" rel="noopener noreferrer">GlazeWM&#xf46c;</a>
+[GlazeWM&#xf46c;](https://github.com/glzr-io/glazewm)
  is a window manager for windows. Now what is that? well the usual way a window opens in windows is called floating meaning you can drag it around the screen using mouse.
 Most are used to this way of working with windows. A window manager is what handles the placement of the windows in a graphical user interface. Simply put you can make the windows open in 'tiling' mode or 'floating' mode.
 
 See the video below how the terminal windows open, the first part is tiling mode and then the floating mode is toggled in the workspace
 
-<a href="https://drive.google.com/file/d/1o51iynAsJaflLAk4lZXdGRc4CVNf7K8H/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Video Link&#xf46c;</a>
+[Video Link&#xf46c;](https://drive.google.com/file/d/1o51iynAsJaflLAk4lZXdGRc4CVNf7K8H/view?usp=drive_link)
 
 <!-- <iframe src="https://drive.google.com/file/d/1o51iynAsJaflLAk4lZXdGRc4CVNf7K8H/preview" width="640" height="480" allow="autoplay"></iframe> -->
 <!-- 
@@ -47,24 +47,24 @@ Making the shift to Linux comes with THE first responsibility of choosing your o
 
 Theirs Ubuntu, Linux Mint, Fedora, Pop Os, Kali Linux, etc. These i think usually are the most known ones or talked about or recommended as a beginner (Well this was the case in my engineering college). 
 
-My goal was to try <a href="https://hyprland.org/" target="_blank" rel="noopener noreferrer">Hyprland&#xf46c;</a>
+My goal was to try [Hyprland&#xf46c;](https://hyprland.org/)
  which is similar to i3 and it seemed Arch was the top recommendation for it. I didn't have the time to bother with installing Arch Linux and Hyprland from scratch especially at the beginning of this transition. I wanted to quickly have a working setup so i ended up choosing Endeavour OS + ML4W Hyprland.
 
 ## ML4W Hyprland
-It was a breeze setting up Hyprland with <a href="https://github.com/mylinuxforwork/dotfiles" target="_blank" rel="noopener noreferrer">ML4W dotfiles&#xf46c;</a>
+It was a breeze setting up Hyprland with [ML4W dotfiles&#xf46c;](https://github.com/mylinuxforwork/dotfiles)
  and provided a better way of exploring how the settings were configured for Hyprland. 
 Then i started doing my own customisation and i think i currently have a config that i would in future replicate when i build hyprland from scratch.
 
 ## Utilities I use
 Coming to Linux i came across many tools that sped up my workflow tremendously and most important kept me focused as it no longer felt lethargic to even just open the windows for a task or project to begin with.
 Some of the most useful tools:
-- <a href="https://yazi-rs.github.io/" target="_blank" rel="noopener noreferrer">yazi&#xf46c;</a>
-- <a href="https://github.com/Qalculate/libqalculate" target="_blank" rel="noopener noreferrer">qalc&#xf46c;</a>
+- [yazi&#xf46c;](https://yazi-rs.github.io/)
+- [qalc&#xf46c;](https://github.com/Qalculate/libqalculate)
 - Scratchpads in Hyprland
-- Neovim - <a href="https://nvchad.com/" target="_blank" rel="noopener noreferrer">Nvchad&#xf46c;</a>
-- <a href="https://github.com/ajeetdsouza/zoxide" target="_blank" rel="noopener noreferrer">Zoxide&#xf46c;</a>, 
-  <a href="https://github.com/junegunn/fzf" target="_blank" rel="noopener noreferrer">fzf&#xf46c;</a>, 
-  <a href="https://github.com/BurntSushi/ripgrep" target="_blank" rel="noopener noreferrer">ripgrep&#xf46c;</a>
+- Neovim - [Nvchad&#xf46c;](https://nvchad.com/)
+- [Zoxide&#xf46c;](https://github.com/ajeetdsouza/zoxide), 
+  [fzf&#xf46c;](https://github.com/junegunn/fzf), 
+  [ripgrep&#xf46c;](https://github.com/BurntSushi/ripgrep)
 
 
 ## Screenshots

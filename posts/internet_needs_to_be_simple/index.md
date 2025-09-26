@@ -7,7 +7,7 @@ tags: ["Web", "Coding"]
 
 ## We are complicating the web
 
-Before i even start, go ahead and just read - <a href="https://justfuckingusehtml.com/" target="_blank" rel="noopener noreferrer">WordsOfGod&#xf46c;</a>  - &#xea6c; language warning though.
+Before i even start, go ahead and just read - [WordsOfGod&#xf46c;](https://justfuckingusehtml.com/)  - &#xea6c; language warning though.
 
 That says enough about the reason why i as well dropped my previous portfolio website which used astro framework and decided to built from scratch a simple website becuase thats'll all i need and most probably you too.
 
@@ -17,7 +17,7 @@ I have been working with Ruby these days and i realised the freedom and trust th
 
 ![](./js_equality.png)
 
-> <a href="https://www.reddit.com/r/ProgrammerHumor/comments/1g60jaw/javascriptnullisnotgreaterorequaltozerobutalsoyes/" target="_blank" rel="noopener noreferrer">If you want the explanation&#xf46c;</a>
+> [If you want the explanation&#xf46c;](https://www.reddit.com/r/ProgrammerHumor/comments/1g60jaw/javascriptnullisnotgreaterorequaltozerobutalsoyes/)
 
 Yeah i honestly don't know how that works but i don't really care. Why would i even do that? If i did that - then its my fault - the programmers.
 
@@ -56,7 +56,7 @@ python3 -m http.server 8000
 
 ## Next Up
 
-I had saved up a JS library that i saw in some reel - <a href="https://animejs.com/" target="_blank" rel="noopener noreferrer">AnimeJs&#xf46c;</a> - man, this website is so cool - the animations are just awesome. Well i always wanted to try it but i never had a website on which i wanted to try - even my previous astro framework website. You know after using arch - you develop a weird trait of everything feels like its bloat. Yeah that is me now - unfortunately.
+I had saved up a JS library that i saw in some reel - [AnimeJs&#xf46c;](https://animejs.com/) - man, this website is so cool - the animations are just awesome. Well i always wanted to try it but i never had a website on which i wanted to try - even my previous astro framework website. You know after using arch - you develop a weird trait of everything feels like its bloat. Yeah that is me now - unfortunately.
 
 Well I built this website in a day from scratch and pretty happy about it on how simple it can be and also look good. Adding animations would make it even coolor! Though I am not gonna add too much unnecessary animations, probably?
 
