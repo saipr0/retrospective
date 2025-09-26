@@ -1,20 +1,18 @@
-## As an Engineer
 
-I spend most of my time learning, motivated both by the feeling that I always have more to understand and by a natural curiosity about science and the world around me.
-And when I pick up some project - it almost always becomes an addiction.
+I'm Sai. A 2025 graduate. I'm currently working at my first company
+<a href="https://tagntrac.ai/" target="_blank" rel="noopener noreferrer">Tag-N-Trac&#xf46c;</a> .
 
-### why the term addiction?
+## Colophon
 
-Because its deteriorating to my health, it's tough to balance things out, when you are immersed onto something and you want to see how it will turn out.
+Inspired by
+<a href="https://stephango.com/" target="_blank" rel="noopener noreferrer">Steph Ango&#xf46c;</a>
+, loving the simplicity, I created a similar website. I can write my notes in simple markdown and have them converted to html, for that I am using
+<a href="https://github.com/markedjs/marked" target="_blank" rel="noopener noreferrer">marked&#xf46c;</a>
+and for the pretty code blocks its
+<a href="https://prismjs.com/" target="_blank" rel="noopener noreferrer">prismjs&#xf46c;</a> .
 
-> I am writing this page at 11 PM while being already tired by todays's job. I don't understand the urge for this that I posses.
+And this is hosted from
+<a href="https://github.com/saipr0/retrospective" target="_blank" rel="noopener noreferrer">my github repo&#xf46c;</a>
+ where i can easily track my changes.
 
-### I am not a 10x or 100x Developer
-
-I enjoy solving problems that have a real-world connection. I’m not someone who can quickly type out code and produce bug-free programs, but I won’t move forward on any project until I truly understand it.
-
-> When you are absolutely certain of something, find evidence that can prove you wrong. If you cannot, that's a red flag.
-
-## As a Living Being
-
-Work In Progress
+## Dossier
