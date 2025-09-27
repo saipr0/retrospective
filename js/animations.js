@@ -14,7 +14,7 @@ export function initHomeAnime() {
         to: 1,
         ease: 'inOut',
       },
-      delay: 200
+      delay: 1000
     });
   });
 
@@ -36,7 +36,7 @@ export function initHomeAnime() {
         to: `1px solid rgba(${r},${g},${b},1)`,
         ease: 'out(3)',
       },
-      delay: 100,
+      delay: 1000,
     });
   });
 }
