@@ -1,3 +1,5 @@
+import { updateBorderColors } from './animations.js';
+
 export function initTheme() {
   function switchPrismTheme(isDark) {
     const link = document.getElementById('prism-theme');
@@ -22,6 +24,7 @@ export function initTheme() {
     toggle.textContent = dark ? '\uf522' : '\uf4ee';
     switchPrismTheme(dark);
     initAboutTheme();
+    updateBorderColors();
   });
 }
 

@@ -64,7 +64,6 @@ header {
 section {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border-color);
 }
 
 /* Navbar */
@@ -197,4 +196,9 @@ div.code-toolbar > .toolbar > .toolbar-item > button::before {
 
 .social-link {
   text-decoration: none;
+}
+
+/* Animation initial states */
+#home-start, #posts-list {
+  opacity: 0;
 }

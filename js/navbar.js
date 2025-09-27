@@ -1,12 +1,10 @@
-import { initTheme } from './theme.js';
-
+import { initNavAnime } from './animations.js'
 export function createNavbar() {
   return `
     <header>
       <h3><a href="#home">Sai Prabhat Gubbala</a></h3>
       <nav>
         <a href="#about">About</a>
-        <a href="#home">Now</a>
         <button id="theme-toggle" class="btn btn-icon"></button>
       </nav>
     </header>
@@ -15,5 +13,5 @@ export function createNavbar() {
 
 export function initNavbar() {
   document.body.insertAdjacentHTML('afterbegin', createNavbar());
-  initTheme();
+  initNavAnime();
 }

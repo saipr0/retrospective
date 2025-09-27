@@ -1,4 +1,6 @@
-import { animate } from '../lib/anime.esm.min.js'
+import { initHomeAnime } from '../animations.js'
+
+let hasAnimated = false;
 
 // metadata
 async function fetchPosts() {
@@ -14,20 +16,6 @@ export async function loadHome() {
       <h3 id="hello-title">&#xf256; Hello!</h3>
       <p>Welcome to my web notepad for all the things I try. Need a reference everytime i reinstall Arch - because i have a weird definition of fun.</p>
     `
-    const $homeStart = document.querySelector('#home-start');
-    const $allInside = $homeStart.querySelectorAll('*');
-
-    animate($allInside, {
-      x: {
-        from: '-1rem',
-        to: '0rem'
-      },
-      opacity: {
-        from: 0,
-        to: 1
-      },
-    });
-
     const posts = await fetchPosts();
     const list = document.getElementById('posts-list');
     list.innerHTML = `
@@ -42,6 +30,16 @@ export async function loadHome() {
       `).join('')}`;
   } catch (error) {
     console.error('Error loading posts:', error);
+  }
+
+  if (!hasAnimated) {
+    initHomeAnime();
+    hasAnimated = true;
+  } else {
+    const divs = document.querySelectorAll('#home-start, #posts-list');
+    divs.forEach(node => {
+      node.style.opacity = '1';
+    });
   }
 }
 
