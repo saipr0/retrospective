@@ -14,7 +14,7 @@ export function initHomeAnime() {
         to: 1,
         ease: 'inOut',
       },
-      delay: 1000
+      delay: 750
     });
   });
 
@@ -81,8 +81,12 @@ export function initNavAnime() {
 }
 
 export function initPostDetailAnime() {
-  const circle = document.querySelector('.post-circle');
+  const circleElement = document.querySelector('.post-circle circle');
   const postBody = document.querySelector('.post-body');
+
+  if (!circleElement || !postBody) return;
+
+  const circumference = 2 * Math.PI * 20;
 
   window.addEventListener('scroll', () => {
     const rect = postBody.getBoundingClientRect();
@@ -90,14 +94,18 @@ export function initPostDetailAnime() {
     if (rect.top > 0) {
       progress = 0;
     } else {
-      const targetTop = window.innerHeight - rect.height; // When bottom becomes visible
-      const distanceToTravel = Math.abs(targetTop); // Distance from 0 to targetTop
+      const targetTop = window.innerHeight - rect.height;
+      const distanceToTravel = Math.abs(targetTop);
       const currentDistance = Math.abs(rect.top);
       progress = Math.min(1, currentDistance / distanceToTravel);
     }
 
-    animate(circle, {
-      opacity: progress,
+    const offset = circumference * (1 - progress);
+    const strokeColor = progress >= 1 ? 'var(--accent-color)' : 'var(--primary-color)';
+
+    animate(circleElement, {
+      strokeDashoffset: offset,
+      stroke: strokeColor,
       duration: 100,
     });
   });

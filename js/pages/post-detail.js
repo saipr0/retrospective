@@ -1,5 +1,6 @@
 import { makeLinksExternal } from '../utils.js';
 import { initPostDetailAnime } from '../animations.js';
+import { progressCircle } from '../svg.js';
 
 // metadata
 async function fetchPosts() {
@@ -39,8 +40,8 @@ async function loadPostContent(postId) {
   const post = posts.find(p => p.id === postId);
   if (!post) throw new Error(`Post with id ${postId} not found`);
 
-  // const r = await fetch(`https://raw.githubusercontent.com/saipr0/retrospective/main/posts/${post.folder}/index.md`);
-  const r = await fetch(`./posts/${post.folder}/index.md`); // for local
+  const r = await fetch(`https://raw.githubusercontent.com/saipr0/retrospective/main/posts/${post.folder}/index.md`);
+  // const r = await fetch(`./posts/${post.folder}/index.md`); // for local
   const markdown = await r.text();
 
   const { title, publishDate, content } = parseMarkdown(markdown);
@@ -59,7 +60,7 @@ async function loadAndDisplayPost(postId) {
           <h1>${title}</h1>
           <p class="post-meta">${publishDate}</p>
         </div>
-        <div class="post-circle"></div>
+        ${progressCircle}
       </div>
       <div class="post-body">${htmlContent}</div>
     `;
