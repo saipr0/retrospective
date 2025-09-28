@@ -1,4 +1,4 @@
-import { animate, stagger, text } from './lib/anime.esm.min.js'
+import { animate, stagger, text } from './lib/anime.esm.js'
 
 export function initHomeAnime() {
   const divs = document.querySelectorAll('#home-start, #posts-list');
@@ -77,5 +77,28 @@ export function initNavAnime() {
       to: 1,
     },
     duration: 3000,
+  });
+}
+
+export function initPostDetailAnime() {
+  const circle = document.querySelector('.post-circle');
+  const postBody = document.querySelector('.post-body');
+
+  window.addEventListener('scroll', () => {
+    const rect = postBody.getBoundingClientRect();
+    let progress;
+    if (rect.top > 0) {
+      progress = 0;
+    } else {
+      const targetTop = window.innerHeight - rect.height; // When bottom becomes visible
+      const distanceToTravel = Math.abs(targetTop); // Distance from 0 to targetTop
+      const currentDistance = Math.abs(rect.top);
+      progress = Math.min(1, currentDistance / distanceToTravel);
+    }
+
+    animate(circle, {
+      opacity: progress,
+      duration: 100,
+    });
   });
 }
