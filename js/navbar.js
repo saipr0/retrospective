@@ -1,4 +1,3 @@
-import { initNavAnime } from './animations.js'
 export function createNavbar() {
   return `
     <header>
@@ -13,5 +12,4 @@ export function createNavbar() {
 
 export function initNavbar() {
   document.body.insertAdjacentHTML('afterbegin', createNavbar());
-  initNavAnime();
 }

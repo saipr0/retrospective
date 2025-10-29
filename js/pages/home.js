@@ -1,7 +1,3 @@
-import { initHomeAnime } from '../animations.js'
-
-let hasAnimated = false;
-
 // metadata
 async function fetchPosts() {
   const r = await fetch('js/data/posts.json');
@@ -30,16 +26,6 @@ export async function loadHome() {
       `).join('')}`;
   } catch (error) {
     console.error('Error loading posts:', error);
-  }
-
-  if (!hasAnimated) {
-    initHomeAnime();
-    hasAnimated = true;
-  } else {
-    const divs = document.querySelectorAll('#home-start, #posts-list');
-    divs.forEach(node => {
-      node.style.opacity = '1';
-    });
   }
 }
 

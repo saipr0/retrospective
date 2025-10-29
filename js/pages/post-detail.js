@@ -1,6 +1,4 @@
 import { makeLinksExternal } from '../utils.js';
-import { initPostDetailAnime } from '../animations.js';
-import { progressCircle } from '../svg.js';
 
 // metadata
 async function fetchPosts() {
@@ -60,14 +58,12 @@ async function loadAndDisplayPost(postId) {
           <h1>${title}</h1>
           <p class="post-meta">${publishDate}</p>
         </div>
-        ${progressCircle}
       </div>
       <div class="post-body">${htmlContent}</div>
     `;
     if (typeof Prism !== 'undefined') Prism.highlightAll();
 
     makeLinksExternal('#post-content');
-    initPostDetailAnime();
 
   } catch (error) {
     console.error('Error loading post:', error);
