@@ -1,6 +1,6 @@
 
 I'm Sai. A 2025 graduate. I'm currently working at my first company
-[Tag-N-Trac&#xf46c;](https://tagntrac.ai/) .
+[Tag-N-Trac&#xf46c;](https://www.linkedin.com/company/tag-n-trac/) .
 
 ## Colophon
 
