@@ -64,6 +64,7 @@ header {
 section {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Navbar */
@@ -137,7 +138,6 @@ h3, h3 a {
   margin: 2rem 0 2rem 0;
   padding: 1rem 0 1rem 0;
   border-bottom: 1px solid var(--border-color);
-  position: sticky;
   top: 0;
   background-color: var(--bg-color);
   display: flex;
@@ -207,9 +207,4 @@ div.code-toolbar > .toolbar > .toolbar-item > button::before {
 
 .social-link {
   text-decoration: none;
-}
-
-/* Animation initial states */
-#home-start, #posts-list {
-  opacity: 0;
 }
