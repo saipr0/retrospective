@@ -5,15 +5,9 @@ publishDate: "2025 • 09"
 tags: ["Customization", "Coding"]
 ---
 
-## I know what you are thinking
+## Neovim is Fun
 
-"This guy is probably wasts times in setting up his enviroment then do actual WoRk"
-
-...
-
-yeah you are right lol. But 9/10 people who tinker with their systems have better skills then those who don't. What skills does this give u may ask? Well i believe the most important for an enginnier - Debugging. Its like you need the right balance. People who do leetcode always, well, they are good in solving a problem that is set in a small scope - but will fall apart when it comes to real word production bugs - where most times you are lost finding the bug. But the above quote also holds true - trust me neovim, arch, linux becomes so addictive - that it literally is an addiction, meaning bad for your health. You spend toooo much time on these then necessary.
-
-Anyways that was a small rant i wanted you to hear. But honestly Neovim makes programming more fun. I won't say things like it makes you fast or 10x developer, even I don't believe that. My work collegues are so damn fast in vscode it surprises me. But Neovim made me so i never leave my terminal - and i love that part because it makes me feel closer to my system.
+Neovim makes programming more fun. I won't say things like it makes you fast or 10x developer, even I don't believe that. My work collegues are so fast in vscode it surprises me. But Neovim made me so i never leave my terminal - and i love that part because it makes me feel closer to my system.
 
 So now for my neovim setup, so in future my mind isn't blank when i try to try tweak it for the 100th time.
 
