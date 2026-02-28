@@ -10,7 +10,7 @@ const SOCIAL_LINKS = {
 };
 
 export async function loadAbout() {
-  const r = await fetch(`./content/about.md`);
+  const r = await fetch('./content/about.md');
   const markdown = await r.text();
 
   const htmlContent = marked.parse(markdown);
