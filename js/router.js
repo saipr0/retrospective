@@ -1,6 +1,7 @@
 import { loadHome } from './pages/home.js';
 import { loadAbout } from './pages/about.js';
 import { loadPostDetail } from './pages/post-detail.js';
+import { runOpener } from './opener.js';
 
 async function showPage(pageId) {
   // Hide all pages first
@@ -12,26 +13,32 @@ async function showPage(pageId) {
   const showLoading = pageId !== 'home';
   let loading;
 
+  let animDone;
   if (showLoading) {
+    const cmd = pageId === 'about' ? '$ cat about.md' : '$ cat post.md';
+    const n = cmd.length;
     loading = document.createElement('div');
     loading.id = 'loading-overlay';
-    loading.innerHTML = '<p class="loading">Loading...</p>';
+    loading.innerHTML = `<span class="load-cmd" style="--w:${n}ch; animation: typeCmd ${n * 65}ms steps(${n}, end) forwards">${cmd}</span><span class="cursor">&#x2588;</span>`;
     loading.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-color);z-index:999;';
     document.body.appendChild(loading);
+    animDone = new Promise(r =>
+      loading.querySelector('.load-cmd').addEventListener('animationend', r, { once: true })
+    );
   }
 
   // Load content
-  const loadPromise = pageId === 'home' ? loadHome() 
-    : pageId === 'about' ? loadAbout() 
+  const loadPromise = pageId === 'home' ? loadHome()
+    : pageId === 'about' ? loadAbout()
     : loadPostDetail();
 
-  // Wait for content to load
-  await loadPromise;
-
-  // If showing loading, wait minimum delay then remove
+  // Wait for both content and typing animation to finish
   if (showLoading) {
-    await new Promise(r => setTimeout(r, 400));
+    await Promise.all([loadPromise, animDone]);
+    await new Promise(r => setTimeout(r, 800));
     loading.remove();
+  } else {
+    await loadPromise;
   }
 
   // Show target page
@@ -46,5 +53,11 @@ async function route() {
 }
 
 window.addEventListener('hashchange', route);
-window.addEventListener('load', route);
+window.addEventListener('load', async () => {
+  if (!sessionStorage.getItem('opened')) {
+    await runOpener();
+    sessionStorage.setItem('opened', '1');
+  }
+  route();
+});
 window.showPage = showPage;
