@@ -7,7 +7,7 @@ export function initTheme() {
   }
 
   const toggle = document.getElementById('theme-toggle');
-  const saved = localStorage.getItem('theme') || 'light';
+  const saved = localStorage.getItem('theme') || 'dark';
   const isDark = saved === 'dark';
 
   document.documentElement.classList.toggle('dark', isDark);
