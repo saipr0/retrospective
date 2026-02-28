@@ -208,3 +208,32 @@ div.code-toolbar > .toolbar > .toolbar-item > button::before {
 .social-link {
   text-decoration: none;
 }
+
+/* Transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+a, nav a, .btn, .font-select {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.page {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loading {
+  color: var(--primary-dim);
+  font-size: 1.2rem;
+  animation: loadingPulse 1s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
