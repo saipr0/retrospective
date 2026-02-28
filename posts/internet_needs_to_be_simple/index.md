@@ -9,27 +9,27 @@ tags: ["Web", "Coding"]
 
 Before i even start, go ahead and just read - [WordsOfGod&#xf46c;](https://justfuckingusehtml.com/)  - &#xea6c; language warning though.
 
-That says enough about the reason why i as well dropped my previous portfolio website which used astro framework and decided to built from scratch a simple website becuase thats'll all i need and most probably you too.
+That says enough about the reason why I as well dropped my previous portfolio website which used astro framework and decided to build from scratch a simple website because that's all I need and most probably you too.
 
 ### Keep it simple
 
-I have been working with Ruby these days and i realised the freedom and trust that language gives me. I never did a lot of coding with Javascript before, just saw the memes especially on its equality mechanism like one below:
+I have been working with Ruby these days and I realised the freedom and trust that language gives me. I never did a lot of coding with Javascript before, just saw the memes especially on its equality mechanism like one below:
 
 ![](./js_equality.png)
 
 > [If you want the explanation&#xf46c;](https://www.reddit.com/r/ProgrammerHumor/comments/1g60jaw/javascriptnullisnotgreaterorequaltozerobutalsoyes/)
 
-Yeah i honestly don't know how that works but i don't really care. Why would i even do that? If i did that - then its my fault - the programmers.
+Yeah i honestly don't know how that works but i don't really care. Why would i even do that? If I did that - then it's my fault - the programmers.
 
-My point is Javascript is also a language that gives a lot of freedom and vanilla JS is capable of lot of things - i just realised this, to be honest probably not completely but i kinda get it.
+My point is Javascript is also a language that gives a lot of freedom and vanilla JS is capable of a lot of things - i just realised this, to be honest probably not completely but i kinda get it.
 
 ### So that was my Inspiration
 
-Yup, I built this from scratch and realised i can just host it here in github for free. Not needing to ever open another website like Netlify or Vercel. I can easily write my notes in markdown and using few libraries like marked and prism (thank you for the geniuses who made these) i can have them view as static websites and my code stays in github - the ever so best place to maintain ur code.
+Yup, I built this from scratch and realised I can just host it here on GitHub for free. Not needing to ever open another website like Netlify or Vercel. I can easily write my notes in markdown and using a few libraries like marked and prism (thank you to the geniuses who made these) I can have them viewed as static websites and my code stays on GitHub - the ever so best place to maintain ur code.
 
 ## Walkthrough
 
-Well at first i created 4 html pages, few js and css files and hoped that they were enough. Then when creating the navbar i realised, when i was making too many changes to it, copying it over to other html is too cumbersome. why can't i just js to add it to my html? and then i was like wait js can handle my html any way i want sooo... instead of maintaining so many html why don't i just one html page?
+Well at first i created 4 html pages, few js and css files and hoped that they were enough. Then when creating the navbar i realised, when I was making too many changes to it, copying it over to other HTML files is too cumbersome. Why can't I just use JS to add it to my HTML? And then I was like, wait, JS can handle my HTML any way I want sooo... instead of maintaining so many HTML files, why don't I just use one HTML page?
 
 ### SPA
 
@@ -40,7 +40,7 @@ I was having another issue when creating a simple theme toggle - switching to an
 
 ### This gives me Confidence
 
-I always the frameworks of JS - honestly afraid which do i even start with so i can start earning money - but the point is if you understand vanilla JS, thats good enough - is what i believe atleast.
+I always avoided the frameworks of JS - honestly afraid which do I even start with so I can start earning money - but the point is if you understand vanilla JS, that's good enough - is what I believe at least.
 
 My previous website was using astro framework and quite frankly i write blogs like with 6 months gap - so i always forget how to even setup the development environment. And that was an added friction to even get started to write another blog. Plus i constantly switch systems.
 
@@ -58,9 +58,9 @@ python3 -m http.server 8000
 
 I had saved up a JS library that i saw in some reel - [AnimeJs&#xf46c;](https://animejs.com/) - man, this website is so cool - the animations are just awesome. Well i always wanted to try it but i never had a website on which i wanted to try - even my previous astro framework website. You know after using arch - you develop a weird trait of everything feels like its bloat. Yeah that is me now - unfortunately.
 
-Well I built this website in a day from scratch and pretty happy about it on how simple it can be and also look good. Adding animations would make it even coolor! Though I am not gonna add too much unnecessary animations, probably?
+Well I built this website in a day from scratch and pretty happy about it on how simple it can be and also look good. Adding animations would make it even cooler! Though I am not gonna add too much unnecessary animations, probably?
 
-## Qoutes
+## Quotes
 
 > Everything should be made as simple as possible, but not simpler
 

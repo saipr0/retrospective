@@ -7,7 +7,7 @@ tags: ["Server"]
 
 We constantly move files from one system to another and it gets tough to keep track of what lies where. This gets really important when it comes to sensitive files like personal photos, documents or even configuration files. Many prefer handing the control of files to a cloud service like Google photos and Drive. But Google is just a huge advertising company. Even if you don't care for privacy at some level (you should though, see the image below), I'm not convinced by the subscription models that these companies offer. With Google you get 15gb of free storage for an account and if i want more i need to pay a recurring fee for god knows how long.
 
-Instead I had a old laptop/PC lying around not being used by anyone. It has 500 GB of storage left unused. What if i could make it my own cloud? Dump all my "digital life" and access it from anywhere in the world? thats awesome, at least that's what i think. Plus I am in control of my data.
+Instead I had an old laptop/PC lying around not being used by anyone. It has 500 GB of storage left unused. What if I could make it my own cloud? Dump all my "digital life" and access it from anywhere in the world? That's awesome, at least that's what I think. Plus I am in control of my data.
 
 This is my minimal fluff guide on setting up a home server as quick as possible.
 
@@ -26,31 +26,31 @@ Next is to be able to access this from anywhere and not just the local network. 
 
 It creates a VPN for all your devices linked using your Tailscale account. So in this new Tailscale network all your devices can see each other over the internet. You just need to add the device to your Tailscale account. It's literally just a 5 mins setup.
 
-Once we got that done lets run services on our server!
+Once we got that done, let's run services on our server!
 
 ## Docker and Docker Compose
 
-There are two ways to go about running your services in you server (that i know of) which is Virtual Machines and Docker containers. They have their pros and cons mainly i think VMs offer better isolation and thus security but since i want this to be a minimal and fast setup, let's go with docker. Don't worry this simple server is secure enough if you don't have any port forwarding going on your router and the devices that are connected to the router are trustworthy.
+There are two ways to go about running your services in your server (that I know of) which is Virtual Machines and Docker containers. They have their pros and cons mainly i think VMs offer better isolation and thus security but since i want this to be a minimal and fast setup, let's go with docker. Don't worry this simple server is secure enough if you don't have any port forwarding going on your router and the devices that are connected to the router are trustworthy.
 
 I recommend learning about docker which would take 30mins? or even less honestly. This typecraft video might be helpful:
 <https://www.youtube.com/watch?v=Ud7Npgi6x8E>
 
-Every service can be managed by their own docker-compose.yml file. Below is the list of services i am currently running and you can see the file structure:
+Every service can be managed by their own docker-compose.yml file. Below is the list of services I am currently running and you can see the file structure:
 *(Backup and utils are not services but simple folders, i'll explain their use later)*
 
 ![](./home_server_file_structure.png)
 
-And use Portainer CE (another services for which i used docker-run to install) to manage your docker containers easily.
+And use Portainer CE (another service for which I used docker-run to install) to manage your docker containers easily.
 
 That's it. You have services running on your server and they can be accessed from Tailscale devices.
 
 Make sure to give a secure password whenever they are launched for the first time to have an extra layer of security.
 
-You can check out Samba as well which is gives the ability to attach network drives to your machines.
+You can check out Samba as well which gives the ability to attach network drives to your machines.
 
 ## A Note if you are using Laptop as a Server
 
-This a laptop so you don't want the lid open and screen on all the time. To disable the suspend
+This is a laptop so you don't want the lid open and screen on all the time. To disable the suspend
 
 ```sh
 sudo nano /etc/systemd/logind.conf
@@ -103,7 +103,7 @@ Easily back up, organize, and manage your photos on your own server. Immich help
 
 > Docker Compose: <https://immich.app/docs/install/docker-compose>
 
-I am not using Immich for Photo Backup from phone to server. Instead all files go to my server through Syncthing or i upload them manually. I have a diagram later explaining the process. This allows me to keep my own file structure. And Immich has read only access to that folder.
+I am not using Immich for Photo Backup from phone to server. Instead, all files go to my server through Syncthing or I upload them manually. I have a diagram later explaining the process. This allows me to keep my own file structure. And Immich has read only access to that folder.
 
 ### Jellyfin
 
@@ -145,7 +145,7 @@ Syncthing is a **continuous file synchronization** program. It synchronizes file
 
 ## A Note on Syncthing
 
-So below is how i am syncing and managing files. Syncthing and backup are different folders in server, everything from syncthing goes to backup folder one way (using rsync), only additions and updates but no deletions. Syncthing acts as a way to keep track of what I'm keeping offline in my devices and to bulk upload files to server. Otherwise, if i wanna just upload and instantly remove from phone then I'll send it directly to backup folder.
+So below is how I am syncing and managing files. Syncthing and backup are different folders in server, everything from syncthing goes to backup folder one way (using rsync), only additions and updates but no deletions. Syncthing acts as a way to keep track of what I'm keeping offline in my devices and to bulk upload files to server. Otherwise, if I wanna just upload and instantly remove from phone then I'll send it directly to backup folder.
 
 This setup has a little redundancy of data though (syncthing and backup folders might have same data twice) But the idea is syncthing to be very less size and backup the opposite in storage.
 
@@ -164,7 +164,7 @@ rsync -av --delete /home/saipr/syncthing/config/Notes/ /home/saipr/Backup/Notes/
 
 ```
 
-And i have scheduled to run the script automatically using Cron.
+And I have scheduled to run the script automatically using Cron.
 
 1. Open the crontab editor:
 

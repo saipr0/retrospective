@@ -7,13 +7,13 @@ tags: ["Customization", "Coding"]
 
 ## Neovim is Fun
 
-Neovim makes programming more fun. I won't say things like it makes you fast or 10x developer, even I don't believe that. My work collegues are so fast in vscode it surprises me. But Neovim made me so i never leave my terminal - and i love that part because it makes me feel closer to my system.
+Neovim makes programming more fun. I won't say things like it makes you fast or 10x developer, even I don't believe that. My work colleagues are so fast in vscode it surprises me. But Neovim made me so i never leave my terminal - and i love that part because it makes me feel closer to my system.
 
-So now for my neovim setup, so in future my mind isn't blank when i try to try tweak it for the 100th time.
+So now for my neovim setup, so in the future my mind isn't blank when I try to tweak it for the 100th time.
 
 ### You need the kickstart
 
-yeah the kickstart nvim is seriously insanely good. I started with that then i modified the file structure to my liking. Now my setup looks like below:
+yeah the kickstart nvim is seriously insanely good. I started with that then I modified the file structure to my liking. Now my setup looks like below:
 
 ```bash
 .
@@ -70,7 +70,7 @@ I forked the original kickstart repo and made the changes.
 
 ### I'll need to understand lsp and blink more though + Snippets
 
-Yeah the lsp and blink came with kickstart. I just add the lsp server of the programming language i need - and it works somewhat but i am definitely not utilising its full power. And thats for another day
+Yeah the lsp and blink came with kickstart. I just add the lsp server of the programming language I need - and it works somewhat but I am definitely not utilising its full power. And that's for another day
 
 ### Quote
 

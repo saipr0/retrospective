@@ -74,7 +74,7 @@ Once you have completed installation you have to do these extra steps:
       sudo ldconfig
     ```
 
-    Following lines configures the XLA cuda directory
+    Following lines configure the XLA cuda directory
 
     ```sh
       mkdir -p $CONDA_PREFIX/etc/conda/activate.d
@@ -82,7 +82,7 @@ Once you have completed installation you have to do these extra steps:
       source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
     ```
 
-    Following lines copies libdevice file to the required path
+    Following lines copy libdevice file to the required path
 
     ```sh
     mkdir -p $CONDA_PREFIX/lib/nvvm/libdevice

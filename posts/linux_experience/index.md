@@ -5,14 +5,14 @@ publishDate: "2024 • 12"
 tags: ["Linux"]
 ---
 
-## so i started writing again...
+## so I started writing again...
 
-First, yeah i know i started writing again after a long while. Well i was lazy, i always thought you have to write a whole blog in one sitting then upload it. 
-This time i want to try a different approach. Just write a little everyday of the interesting stuff i found or learned and that can be shared. Well i know no one's gonna read these boring blogs but the main reason for still writing is for myself, it's a good way to keep track of things you learned and retrospect.
+First, yeah I know I started writing again after a long while. Well I was lazy, I always thought you have to write a whole blog in one sitting then upload it.
+This time I want to try a different approach. Just write a little everyday of the interesting stuff I found or learned and that can be shared. Well I know no one's gonna read these boring blogs but the main reason for still writing is for myself, it's a good way to keep track of things you learned and retrospect.
 
 ## Back to the main topic! LINUX
-Why suddenly the shift? well seeing how Microsoft is pushing their AI stuff, copilot into windows plus windows 11 has always been buggy in terms of simple things like for example opening the notification tray?! On opening the notification tray for the first time why does it load so long? Another thing why can't i see battery percentage in the taskbar, the battery icon hardly tells anything, i have to hover it continuously to check. 
-I can go on about the issues but this isn't about that. And honestly these aren't even the real reason for my switch to Linux. It's because i discovered something called window managers, specifically GlazeWM in windows.
+Why suddenly the shift? Well, seeing how Microsoft is pushing their AI stuff, Copilot into Windows - plus Windows 11 has always been buggy in terms of simple things like for example opening the notification tray?! On opening the notification tray for the first time why does it load so long? Another thing why can't i see battery percentage in the taskbar, the battery icon hardly tells anything, i have to hover it continuously to check. 
+I can go on about the issues but this isn't about that. And honestly these aren't even the real reason for my switch to Linux. It's because I discovered something called window managers, specifically GlazeWM in Windows.
 
 ## Window Managers
 [GlazeWM&#xf46c;](https://github.com/glzr-io/glazewm)
@@ -32,31 +32,31 @@ See the video below how the terminal windows open, the first part is tiling mode
 
 
 ## Why is it better?
-Sometimes (well most of the times if i put my lazy ass to work) having a lot of windows open gets difficult to manage. Having a window minimised makes my mind forget about its location, to open it, its either ALT tabbing multiple times or its in another virtual desktop.
-and when your are zoning in to your work, doing this in between really slows you down or pulls you out of the task at hand.
+Sometimes (well most of the time if I put my lazy ass to work) having a lot of windows open gets difficult to manage. Having a window minimised makes my mind forget about its location, to open it, it's either ALT tabbing multiple times or it's in another virtual desktop.
+And when you are zoning in to your work, doing this in between really slows you down or pulls you out of the task at hand.
 
 Many window managers usually default to tiling mode, that is having all the windows open in front of you and can be separated in workspaces. GlazeWM allowed this in windows. As i kept using, managing windows became so easy. With a simple key-bind i can switch to a different workspace and see the windows, without worrying if any window is hidden behind another or minimised and quickly move the cursor towards it and do the task.
 
 ## Wasn't the topic about Linux??
-Yeah i know i am getting to it. So as i was using GlaceWM, i got to know the origin of its idea, like the key-binds and tiling manner, came from i3 which is a famous window manager in Linux. Though they were some other factors like customisation (the look and feel) of the desktop and my work required using the terminal often which in windows it took ages to open (reason partially being i had miniconda installed and had its environment activated by default)and nope i couldn't bear that delay anymore. I finally switched to Linux! 
+Yeah i know i am getting to it. So as I was using GlazeWM, I got to know the origin of its idea, like the key-binds and tiling manner, came from i3 which is a famous window manager in Linux. Though there were some other factors like customisation (the look and feel) of the desktop and my work required using the terminal often which in Windows it took ages to open (reason partially being I had miniconda installed and had its environment activated by default) and nope I couldn't bear that delay anymore. I finally switched to Linux! 
 
-(Confession... this isn't the first time i tried Linux and also currently i am still running a dual boot but i haven't opened windows since i dual booted. But this IS the first time i committed to using it as my main OS for over a month now)
+(Confession... this isn't the first time I tried Linux and also currently I am still running a dual boot but I haven't opened Windows since I dual booted. But this IS the first time I committed to using it as my main OS for over a month now)
 
 ## Endeavour OS & Hyprland
 Making the shift to Linux comes with THE first responsibility of choosing your own operating system. By that i mean choosing your Linux distribution. Linux is actually just a kernel and there's a term called 'GNU' which you can lookup the history on it but essentially "GNU/Linux" this whole term together represents an operating system like Windows and Mac OS out there. And a distribution is flavours of GNU/Linux ig? Basically with different distros you get various packaged software and sometimes their ideologies also differ, like how the updates should happen or even the UI/UX choices.
 
-Theirs Ubuntu, Linux Mint, Fedora, Pop Os, Kali Linux, etc. These i think usually are the most known ones or talked about or recommended as a beginner (Well this was the case in my engineering college). 
+There's Ubuntu, Linux Mint, Fedora, Pop Os, Kali Linux, etc. These i think usually are the most known ones or talked about or recommended as a beginner (Well this was the case in my engineering college). 
 
 My goal was to try [Hyprland&#xf46c;](https://hyprland.org/)
- which is similar to i3 and it seemed Arch was the top recommendation for it. I didn't have the time to bother with installing Arch Linux and Hyprland from scratch especially at the beginning of this transition. I wanted to quickly have a working setup so i ended up choosing Endeavour OS + ML4W Hyprland.
+ which is similar to i3 and it seemed Arch was the top recommendation for it. I didn't have the time to bother with installing Arch Linux and Hyprland from scratch especially at the beginning of this transition. I wanted to quickly have a working setup so I ended up choosing Endeavour OS + ML4W Hyprland.
 
 ## ML4W Hyprland
 It was a breeze setting up Hyprland with [ML4W dotfiles&#xf46c;](https://github.com/mylinuxforwork/dotfiles)
- and provided a better way of exploring how the settings were configured for Hyprland. 
-Then i started doing my own customisation and i think i currently have a config that i would in future replicate when i build hyprland from scratch.
+ and provided a better way of exploring how the settings were configured for Hyprland.
+Then I started doing my own customisation and I think I currently have a config that I would in the future replicate when I build Hyprland from scratch.
 
 ## Utilities I use
-Coming to Linux i came across many tools that sped up my workflow tremendously and most important kept me focused as it no longer felt lethargic to even just open the windows for a task or project to begin with.
+Coming to Linux, I came across many tools that sped up my workflow tremendously and most importantly kept me focused as it no longer felt lethargic to even just open the windows for a task or project to begin with.
 Some of the most useful tools:
 - [yazi&#xf46c;](https://yazi-rs.github.io/)
 - [qalc&#xf46c;](https://github.com/Qalculate/libqalculate)
@@ -74,8 +74,8 @@ Neir Automata
 ![](./neir.jpeg)
 
 ## Summing Up
-If i wrote everything i wanted to convey, this would become lengthy and boring real fast. 
-To sum it up i won't be switching to windows except only for gaming. Linux and Hyprland has been amazing to use. I might create a video showcasing my setup and link it here in future. As in a video format you would be able to better see how the keybinds make it easier to navigate the desktop. Plus i might cover some utilities separately like scratchpads also. 
+If I wrote everything I wanted to convey, this would become lengthy and boring real fast.
+To sum it up I won't be switching to Windows except only for gaming. Linux and Hyprland have been amazing to use. I might create a video showcasing my setup and link it here in the future. As in a video format you would be able to better see how the keybinds make it easier to navigate the desktop. Plus I might cover some utilities separately like scratchpads also. 
 
 ## Here's a 1 min video (not mine!)
 

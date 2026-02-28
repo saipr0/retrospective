@@ -8,11 +8,11 @@ Inspired by
 [Steph Ango&#xf46c;](https://stephango.com/)
 , loving the simplicity, I created a similar website. I can write my notes in simple markdown and have them converted to html, for that I am using
 [marked&#xf46c;](https://github.com/markedjs/marked)
-and for the pretty code blocks its
+and for the pretty code blocks it's
 [prismjs&#xf46c;](https://prismjs.com/) .
 
 And this is hosted from
 [my github repo&#xf46c;](https://github.com/saipr0/retrospective)
- where i can easily track my changes.
+ where I can easily track my changes.
 
 ## Dossier
