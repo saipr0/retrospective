@@ -21,6 +21,7 @@ export function runOpener() {
         </div>
       </div>
       <div id="enter-prompt">press enter to continue</div>`;
+    document.getElementById('opener-blocker')?.remove();
     document.body.appendChild(overlay);
 
     document.getElementById('term-greeting-line').style.visibility = 'hidden';
