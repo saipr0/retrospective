@@ -9,7 +9,7 @@ tags: ["Deep Learning", "Perceptron", "Python", "Neural Networks"]
 
 ![Alt text](./image.png)
 
-### Generating Linearly Separable Data
+## Generating Linearly Separable Data
 
 ```python
 import numpy as np
@@ -45,7 +45,7 @@ plt.show()
 
 ![](./perceptron-learning-alg_4_0.png)
 
-### Random Weights
+## Random Weights
 
 ```python
 # w -> weights;
@@ -55,14 +55,14 @@ max_value = 100
 w = [random.random() for _ in range(2)]
 ```
 
-### Bias and Learning Rate
+## Bias and Learning Rate
 
 ```python
 b = -1 # b -> bias;
 a = 1 # a -> learning rate;
 ```
 
-### Function to plot the decision boundary
+## Function to plot the decision boundary
 
 ```python
 # Plotting function
@@ -82,7 +82,7 @@ def plot_points(P, N, w, b):
 
 ```
 
-### Aggregate function
+## Aggregate function
 
 ```python
 # Aggregate function

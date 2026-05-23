@@ -11,7 +11,7 @@ Neovim makes programming more fun. I won't say things like it makes you fast or 
 
 So now for my neovim setup, so in the future my mind isn't blank when I try to tweak it for the 100th time.
 
-### You need the kickstart
+## You need the kickstart
 
 yeah the kickstart nvim is seriously insanely good. I started with that then I modified the file structure to my liking. Now my setup looks like below:
 
@@ -59,7 +59,7 @@ yeah the kickstart nvim is seriously insanely good. I started with that then I m
 
 You got the init.lua for all base settings and then the plugins folder. Having the only two concerns separated like this in the above structure makes it easy to keep the config in the back of your mind as well if ever you want to come back and tweak. Basically it makes it easy to tweak.
 
-### one-liner to setup
+## One-Liner Setup
 
 ```sh
 https://github.com/saipr0/kickstart.nvim
@@ -68,10 +68,10 @@ https://github.com/saipr0/kickstart.nvim
 
 I forked the original kickstart repo and made the changes.
 
-### I'll need to understand lsp and blink more though + Snippets
+## I'll need to understand lsp and blink more though + Snippets
 
 Yeah the lsp and blink came with kickstart. I just add the lsp server of the programming language I need - and it works somewhat but I am definitely not utilising its full power. And that's for another day
 
-### Quote
+## Quotes
 
 > "You don’t use Neovim to save time. You use it so that editing text feels like wielding a superpower."

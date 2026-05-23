@@ -3,7 +3,11 @@ import { loadAbout } from './pages/about.js';
 import { loadPostDetail } from './pages/post-detail.js';
 import { runOpener } from './opener.js';
 
+let activeNavigationId = 0;
+
 async function showPage(pageId) {
+  const navigationId = ++activeNavigationId;
+
   // Hide all pages first
   document.querySelectorAll('.page').forEach(page => {
     page.style.display = 'none';
@@ -35,10 +39,19 @@ async function showPage(pageId) {
   // Wait for both content and typing animation to finish
   if (showLoading) {
     await Promise.all([loadPromise, animDone]);
-    await new Promise(r => setTimeout(r, 800));
+    if (navigationId !== activeNavigationId) {
+      loading.remove();
+      return;
+    }
+    await new Promise(r => setTimeout(r, 180));
+    if (navigationId !== activeNavigationId) {
+      loading.remove();
+      return;
+    }
     loading.remove();
   } else {
     await loadPromise;
+    if (navigationId !== activeNavigationId) return;
   }
 
   // Show target page

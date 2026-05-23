@@ -11,7 +11,7 @@ Before i even start, go ahead and just read - [WordsOfGod&#xf46c;](https://justf
 
 That says enough about the reason why I as well dropped my previous portfolio website which used astro framework and decided to build from scratch a simple website because that's all I need and most probably you too.
 
-### Keep it simple
+## Keep it simple
 
 I have been working with Ruby these days and I realised the freedom and trust that language gives me. I never did a lot of coding with Javascript before, just saw the memes especially on its equality mechanism like one below:
 
@@ -23,7 +23,7 @@ Yeah i honestly don't know how that works but i don't really care. Why would i e
 
 My point is Javascript is also a language that gives a lot of freedom and vanilla JS is capable of a lot of things - i just realised this, to be honest probably not completely but i kinda get it.
 
-### So that was my Inspiration
+## So that was my Inspiration
 
 Yup, I built this from scratch and realised I can just host it here on GitHub for free. Not needing to ever open another website like Netlify or Vercel. I can easily write my notes in markdown and using a few libraries like marked and prism (thank you to the geniuses who made these) I can have them viewed as static websites and my code stays on GitHub - the ever so best place to maintain ur code.
 
@@ -38,7 +38,7 @@ Yup, got to know that that is called a single-page application (SPA).
 
 I was having another issue when creating a simple theme toggle - switching to another html was giving white flash - NOPE - don't want that. Well this i first solved by having the html itself get the dark class instead of just the body. But well with SPA, I'm on the same html page.
 
-### This gives me Confidence
+## This gives me Confidence
 
 I always avoided the frameworks of JS - honestly afraid which do I even start with so I can start earning money - but the point is if you understand vanilla JS, that's good enough - is what I believe at least.
 

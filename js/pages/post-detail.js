@@ -32,6 +32,62 @@ function fixImagePaths(content, postFolder) {
     .replace(/src="\.\/([^"]+)"/g, `src="posts/${postFolder}/$1"`);
 }
 
+function wrapNerdIcons(root) {
+  const iconPattern = /[\uE000-\uF8FF]/;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+
+  while (walker.nextNode()) {
+    if (iconPattern.test(walker.currentNode.textContent)) {
+      textNodes.push(walker.currentNode);
+    }
+  }
+
+  textNodes.forEach(node => {
+    const fragment = document.createDocumentFragment();
+    const parts = node.textContent.split(/([\uE000-\uF8FF])/);
+
+    parts.forEach(part => {
+      if (!part) return;
+
+      if (iconPattern.test(part)) {
+        const icon = document.createElement('span');
+        icon.className = 'nerd-icon-inline';
+        icon.textContent = part;
+        fragment.appendChild(icon);
+      } else {
+        fragment.appendChild(document.createTextNode(part));
+      }
+    });
+
+    node.parentNode.replaceChild(fragment, node);
+  });
+}
+
+function wrapPostSections(root) {
+  const sectionNodes = [];
+  let currentSection = document.createElement('section');
+  currentSection.className = 'post-section';
+
+  Array.from(root.childNodes).forEach(node => {
+    const startsSection = node.nodeType === Node.ELEMENT_NODE && node.tagName === 'H2';
+
+    if (startsSection && currentSection.childNodes.length > 0) {
+      sectionNodes.push(currentSection);
+      currentSection = document.createElement('section');
+      currentSection.className = 'post-section';
+    }
+
+    currentSection.appendChild(node);
+  });
+
+  if (currentSection.childNodes.length > 0) {
+    sectionNodes.push(currentSection);
+  }
+
+  root.replaceChildren(...sectionNodes);
+}
+
 // fetch markdown
 async function loadPostContent(postId) {
   const posts = await fetchPosts(); // metdata
@@ -39,7 +95,6 @@ async function loadPostContent(postId) {
   if (!post) throw new Error(`Post with id ${postId} not found`);
 
   const r = await fetch(`https://raw.githubusercontent.com/saipr0/retrospective/main/posts/${post.folder}/index.md`);
-  // const r = await fetch(`./posts/${post.folder}/index.md`); // for local
   const markdown = await r.text();
 
   const { title, publishDate, content } = parseMarkdown(markdown);
@@ -61,6 +116,11 @@ async function loadAndDisplayPost(postId) {
       </div>
       <div class="post-body">${htmlContent}</div>
     `;
+    const postContent = document.getElementById('post-content');
+    const postBody = postContent.querySelector('.post-body');
+
+    wrapPostSections(postBody);
+    wrapNerdIcons(postContent);
     if (typeof Prism !== 'undefined') Prism.highlightAll();
 
     makeLinksExternal('#post-content');
