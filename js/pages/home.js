@@ -10,7 +10,7 @@ export async function loadHome() {
     const start = document.getElementById('home-start');
     start.innerHTML = `
       <h3 id="hello-title"><span class="nerd-icon">&#xf256;</span> Hello!</h3>
-      <p>Welcome to my web notepad for all the things I try. Need a reference everytime i reinstall Arch - because i have a weird definition of fun.</p>
+      <p>Welcome to my web notepad for all the things I try.</p>
     `
     const posts = await fetchPosts();
     const list = document.getElementById('posts-list');

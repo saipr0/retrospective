@@ -1,3 +1,5 @@
+import { icons } from './svg.js';
+
 export function initTheme() {
   function switchPrismTheme(isDark) {
     const link = document.getElementById('prism-theme');
@@ -10,8 +12,13 @@ export function initTheme() {
   const saved = localStorage.getItem('theme') || 'dark';
   const isDark = saved === 'dark';
 
+  function setToggleIcon(dark) {
+    toggle.innerHTML = dark ? icons.moon : icons.sun;
+    toggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+
   document.documentElement.classList.toggle('dark', isDark);
-  toggle.textContent = isDark ? '\uf522' : '\uf4ee';
+  setToggleIcon(isDark);
   switchPrismTheme(isDark);
 
   toggle.addEventListener('click', () => {
@@ -19,7 +26,7 @@ export function initTheme() {
     const theme = dark ? 'dark' : 'light';
 
     localStorage.setItem('theme', theme);
-    toggle.textContent = dark ? '\uf522' : '\uf4ee';
+    setToggleIcon(dark);
     switchPrismTheme(dark);
     initAboutTheme();
   });
