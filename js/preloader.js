@@ -1,6 +1,4 @@
 const MANIFEST_URL = 'js/data/archive-manifest.json';
-const CACHE_PREFIX = 'retrospective-archive-';
-const VERSION_KEY = 'retrospective-archive-version';
 const BOOT_TIME = 2400;
 const BAR_SIZE = 28;
 const PHASES = [
@@ -22,38 +20,15 @@ async function fetchManifest() {
   return response.json();
 }
 
-async function archiveIsCurrent(manifest) {
-  const forceBoot = new URLSearchParams(location.search).get('boot') === '1';
-  if (forceBoot || localStorage.getItem(VERSION_KEY) !== manifest.version) return false;
-  if (!('caches' in window)) return true;
-
-  return (await caches.keys()).includes(`${CACHE_PREFIX}${manifest.version}`);
-}
-
-async function cacheArchive(manifest, progress) {
-  const cacheName = `${CACHE_PREFIX}${manifest.version}`;
-  const cache = 'caches' in window ? await caches.open(cacheName) : null;
-
-  if (cache) {
-    const oldCaches = (await caches.keys())
-      .filter(name => name.startsWith(CACHE_PREFIX) && name !== cacheName);
-    await Promise.all(oldCaches.map(name => caches.delete(name)));
-  }
-
+async function syncArchive(manifest, progress) {
   await Promise.all(manifest.assets.map(async asset => {
     const url = new URL(asset.url, document.baseURI);
-    const response = await fetch(url, { cache: 'reload' });
+    const response = await fetch(url, { cache: 'no-cache' });
     if (!response.ok) throw new Error(`${asset.url} returned ${response.status}`);
-    const cachedResponse = response.clone();
 
-    await Promise.all([
-      response.arrayBuffer(),
-      cache?.put(url, cachedResponse)
-    ]);
+    await response.arrayBuffer();
     progress.actual += asset.size / manifest.totalBytes;
   }));
-
-  localStorage.setItem(VERSION_KEY, manifest.version);
 }
 
 function renderProgress(loader, manifest, ratio) {
@@ -100,12 +75,10 @@ function animateProgress(loader, manifest, progress) {
   });
 }
 
-async function dismissLoader(loader, immediate = false) {
+async function dismissLoader(loader) {
   document.documentElement.classList.remove('archive-loading');
-  if (!immediate) {
-    loader.classList.add('is-complete');
-    await wait(320);
-  }
+  loader.classList.add('is-complete');
+  await wait(320);
   loader.hidden = true;
 }
 
@@ -114,18 +87,15 @@ export async function prepareArchive() {
 
   try {
     const manifest = await fetchManifest();
-    if (await archiveIsCurrent(manifest)) return dismissLoader(loader, true);
-
-    navigator.serviceWorker?.register('sw.js').catch(console.warn);
     const progress = { actual: 0, visible: 0, done: false };
     const animation = animateProgress(loader, manifest, progress);
-    let archiveLoaded = true;
+    let syncComplete = true;
 
     try {
-      await cacheArchive(manifest, progress);
+      await syncArchive(manifest, progress);
     } catch (error) {
-      archiveLoaded = false;
-      console.warn('Archive preload skipped:', error);
+      syncComplete = false;
+      console.warn('Archive sync skipped:', error);
     }
 
     progress.actual = 1;
@@ -133,10 +103,10 @@ export async function prepareArchive() {
     await animation;
 
     loader.querySelector('[data-loader-status]').textContent =
-      archiveLoaded ? 'ARCHIVE ONLINE' : 'ARCHIVE PARTIAL';
+      syncComplete ? 'SYNC COMPLETE' : 'SYNC PARTIAL';
     await wait(420);
   } catch (error) {
-    console.warn('Archive preload skipped:', error);
+    console.warn('Archive sync skipped:', error);
   }
 
   await dismissLoader(loader);

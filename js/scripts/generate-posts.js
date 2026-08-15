@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
 
 const rootDir = path.join(__dirname, '..', '..');
 
@@ -98,25 +97,18 @@ function generateArchiveManifest() {
   const assetFiles = [...new Set([...directAssets, ...discoveredAssets])]
     .filter(file => fs.existsSync(file))
     .sort();
-  const versionHash = crypto.createHash('sha256');
   const assets = assetFiles.map(file => {
     const url = path.relative(rootDir, file).split(path.sep).join('/');
-    const contents = fs.readFileSync(file);
-
-    versionHash.update(url);
-    versionHash.update(contents);
-
-    return { url, size: contents.length };
+    return { url, size: fs.statSync(file).size };
   });
   const manifest = {
-    version: versionHash.digest('hex').slice(0, 12),
     totalBytes: assets.reduce((total, asset) => total + asset.size, 0),
     assets
   };
   const outputPath = path.join(dataDir, 'archive-manifest.json');
 
   fs.writeFileSync(outputPath, JSON.stringify(manifest, null, 2));
-  console.log(`Generated archive manifest ${manifest.version} (${manifest.totalBytes} bytes)`);
+  console.log(`Generated archive manifest (${manifest.totalBytes} bytes)`);
 }
 
 generatePostsJson();
