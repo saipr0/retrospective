@@ -7,7 +7,7 @@ tags: ["Deep Learning", "Perceptron", "Python", "Neural Networks"]
 
 ## Perceptron Learning Algorithm
 
-![Alt text](./image.png)
+![Alt text](./image.webp)
 
 ## Generating Linearly Separable Data
 
@@ -43,7 +43,7 @@ plt.show()
 # I = P + N
 ```
 
-![](./perceptron-learning-alg_4_0.png)
+![](./perceptron-learning-alg_4_0.webp)
 
 ## Random Weights
 
@@ -120,7 +120,7 @@ w, b = PLA(I, w, b)
 print(w, b)
 ```
 
-![](./perceptron-learning-alg_13_0.png)
+![](./perceptron-learning-alg_13_0.webp)
 
 ```text
     [2.830934058092664, -0.49971814589930985] -1

@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+
+const rootDir = path.join(__dirname, '..', '..');
 
 function extractFrontmatter(content) {
   const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---/;
@@ -28,9 +31,20 @@ function extractFrontmatter(content) {
   return frontmatter;
 }
 
+function extractBody(content) {
+  return content.replace(/^---\s*\n[\s\S]*?\n---\s*\n?/, '');
+}
+
+function walkFiles(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    const entryPath = path.join(directory, entry.name);
+    return entry.isDirectory() ? walkFiles(entryPath) : [entryPath];
+  });
+}
+
 function generatePostsJson() {
-  const postsDir = path.join(__dirname, '..', '..', 'posts');
-  const dataDir = path.join(__dirname, '..', 'data');
+  const postsDir = path.join(rootDir, 'posts');
+  const dataDir = path.join(rootDir, 'js', 'data');
   const posts = [];
 
   if (!fs.existsSync(dataDir)) {
@@ -54,7 +68,8 @@ function generatePostsJson() {
           description: frontmatter.description,
           publishDate: frontmatter.publishDate,
           tags: frontmatter.tags || [],
-          folder: folder
+          folder,
+          content: extractBody(content)
         });
       }
     }
@@ -69,4 +84,40 @@ function generatePostsJson() {
   posts.forEach(post => console.log(`   - ${post.title} (${post.publishDate})`));
 }
 
+function generateArchiveManifest() {
+  const dataDir = path.join(rootDir, 'js', 'data');
+  const directAssets = [
+    path.join(dataDir, 'posts.json'),
+    path.join(rootDir, 'content', 'about.md'),
+    path.join(rootDir, 'css', 'prism-dark.css')
+  ];
+  const discoveredAssets = [
+    ...walkFiles(path.join(rootDir, 'css', 'assets')),
+    ...walkFiles(path.join(rootDir, 'posts')).filter(file => !file.endsWith('index.md'))
+  ];
+  const assetFiles = [...new Set([...directAssets, ...discoveredAssets])]
+    .filter(file => fs.existsSync(file))
+    .sort();
+  const versionHash = crypto.createHash('sha256');
+  const assets = assetFiles.map(file => {
+    const url = path.relative(rootDir, file).split(path.sep).join('/');
+    const contents = fs.readFileSync(file);
+
+    versionHash.update(url);
+    versionHash.update(contents);
+
+    return { url, size: contents.length };
+  });
+  const manifest = {
+    version: versionHash.digest('hex').slice(0, 12),
+    totalBytes: assets.reduce((total, asset) => total + asset.size, 0),
+    assets
+  };
+  const outputPath = path.join(dataDir, 'archive-manifest.json');
+
+  fs.writeFileSync(outputPath, JSON.stringify(manifest, null, 2));
+  console.log(`Generated archive manifest ${manifest.version} (${manifest.totalBytes} bytes)`);
+}
+
 generatePostsJson();
+generateArchiveManifest();

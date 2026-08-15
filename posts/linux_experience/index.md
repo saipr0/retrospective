@@ -69,9 +69,9 @@ Some of the most useful tools:
 
 ## Screenshots
 Mount Fuji
-![](./fuji.jpg)
+![](./fuji.webp)
 Neir Automata
-![](./neir.jpeg)
+![](./neir.webp)
 
 ## Summing Up
 If I wrote everything I wanted to convey, this would become lengthy and boring real fast.
@@ -80,7 +80,6 @@ To sum it up I won't be switching to Windows except only for gaming. Linux and H
 ## Here's a 1 min video (not mine!)
 
 > [Why I use Linux &#xf52c; &#xf46c; ](https://www.youtube.com/watch?v=jdUXfsMTv7o)
-
 
 
 

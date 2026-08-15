@@ -22,12 +22,14 @@ async function showPage(pageId) {
   if (targetPage) targetPage.style.display = 'block';
 }
 
-async function route() {
+export async function route() {
   const hash = window.location.hash.slice(1) || 'home';
   const [page] = hash.split('?');
   await showPage(page);
 }
 
-window.addEventListener('hashchange', route);
-window.addEventListener('load', route);
-window.showPage = showPage;
+export function startRouter() {
+  window.addEventListener('hashchange', route);
+  window.showPage = showPage;
+  return route();
+}

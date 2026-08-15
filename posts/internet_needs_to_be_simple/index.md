@@ -15,7 +15,7 @@ That says enough about the reason why I as well dropped my previous portfolio we
 
 I have been working with Ruby these days and I realised the freedom and trust that language gives me. I never did a lot of coding with Javascript before, just saw the memes especially on its equality mechanism like one below:
 
-![](./js_equality.png)
+![](./js_equality.webp)
 
 > [If you want the explanation&#xf46c;](https://www.reddit.com/r/ProgrammerHumor/comments/1g60jaw/javascriptnullisnotgreaterorequaltozerobutalsoyes/)
 

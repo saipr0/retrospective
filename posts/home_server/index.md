@@ -11,13 +11,13 @@ Instead I had an old laptop/PC lying around not being used by anyone. It has 500
 
 This is my minimal fluff guide on setting up a home server as quick as possible.
 
-![](https://preview.redd.it/the-privacy-anonymity-spectrum-v0-1ryuzik88ohb1.png?auto=webp&s=3f8ce92a132ba434b12ccea21a1ba144d9c21d22)
+![](./privacy-spectrum.webp)
 
 ## An old ASUS TUF
 
 I chose Ubuntu Server to install on this. Below you can see the specs
 
-![](./home_server_ff.png)
+![](./home_server_ff.webp)
 
 ## Tailscale VPN
 
@@ -38,7 +38,7 @@ I recommend learning about docker which would take 30mins? or even less honestly
 Every service can be managed by their own docker-compose.yml file. Below is the list of services I am currently running and you can see the file structure:
 *(Backup and utils are not services but simple folders, i'll explain their use later)*
 
-![](./home_server_file_structure.png)
+![](./home_server_file_structure.webp)
 
 And use Portainer CE (another service for which I used docker-run to install) to manage your docker containers easily.
 
@@ -149,7 +149,7 @@ So below is how I am syncing and managing files. Syncthing and backup are differ
 
 This setup has a little redundancy of data though (syncthing and backup folders might have same data twice) But the idea is syncthing to be very less size and backup the opposite in storage.
 
-![](./home_server_backup.png)
+![](./home_server_backup.webp)
 
 Following are the rsync commands in a bash script file. Only the Notes folder stays in perfect sync meaning even deletions occur in it.
 
@@ -190,7 +190,7 @@ crontab -e
 
 ## Final Dashboard
 
-![](./home_server_dashboard.png)
+![](./home_server_dashboard.webp)
 
 ## Further Improvements
 

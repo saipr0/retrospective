@@ -1,30 +1,5 @@
 import { makeLinksExternal } from '../utils.js';
-
-// metadata
-async function fetchPosts() {
-  const r = await fetch('js/data/posts.json');
-  return r.json();
-}
-
-// parse markdown
-function parseMarkdown(markdown) {
-  const r = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-  const m = markdown.match(r);
-  if (!m) return { frontmatter: {}, content: markdown };
-
-  const fm = m[1];
-  const content = m[2];
-
-  const frontmatter = {};
-  fm.split('\n').forEach(line => {
-    const [key, ...parts] = line.split(':');
-    if (key && parts.length) {
-      let val = parts.join(':').trim().replace(/^["']|["']$/g, '');
-      frontmatter[key.trim()] = val;
-    }
-  });
-  return { frontmatter, content, title: frontmatter.title || 'Untitled', publishDate: frontmatter.publishDate || '' };
-}
+import { fetchPosts } from '../data/posts.js';
 
 // image paths in markdown
 function fixImagePaths(content, postFolder) {
@@ -90,16 +65,15 @@ function wrapPostSections(root) {
 
 // fetch markdown
 async function loadPostContent(postId) {
-  const posts = await fetchPosts(); // metdata
+  const posts = await fetchPosts();
   const post = posts.find(p => p.id === postId);
   if (!post) throw new Error(`Post with id ${postId} not found`);
 
-  const r = await fetch(`https://raw.githubusercontent.com/saipr0/retrospective/main/posts/${post.folder}/index.md`);
-  const markdown = await r.text();
-
-  const { title, publishDate, content } = parseMarkdown(markdown);
-  const fixedContent = fixImagePaths(content, post.folder);
-  return { title, publishDate, content: fixedContent };
+  return {
+    title: post.title,
+    publishDate: post.publishDate,
+    content: fixImagePaths(post.content, post.folder)
+  };
 }
 
 // Display Post

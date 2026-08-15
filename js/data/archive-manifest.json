@@ -1,0 +1,98 @@
+{
+  "version": "f0fbf89d607e",
+  "totalBytes": 1561651,
+  "assets": [
+    {
+      "url": "content/about.md",
+      "size": 628
+    },
+    {
+      "url": "css/assets/fonts/JetBrainsMono/JetBrainsMonoNerdIcons.ttf",
+      "size": 6860
+    },
+    {
+      "url": "css/assets/fonts/MapleMono/MapleMono-Italic-VF.woff2",
+      "size": 152816
+    },
+    {
+      "url": "css/assets/fonts/MapleMono/MapleMono-VF.woff2",
+      "size": 130908
+    },
+    {
+      "url": "css/assets/images/social-card-2.png",
+      "size": 89771
+    },
+    {
+      "url": "css/assets/images/social-card.png",
+      "size": 95891
+    },
+    {
+      "url": "css/prism-dark.css",
+      "size": 21297
+    },
+    {
+      "url": "js/data/posts.json",
+      "size": 38664
+    },
+    {
+      "url": "posts/first_note/retro-spec.gif",
+      "size": 123434
+    },
+    {
+      "url": "posts/home_server/home_server_backup.webp",
+      "size": 56276
+    },
+    {
+      "url": "posts/home_server/home_server_dashboard.webp",
+      "size": 101026
+    },
+    {
+      "url": "posts/home_server/home_server_ff.webp",
+      "size": 102018
+    },
+    {
+      "url": "posts/home_server/home_server_file_structure.webp",
+      "size": 67732
+    },
+    {
+      "url": "posts/home_server/privacy-spectrum.webp",
+      "size": 146254
+    },
+    {
+      "url": "posts/internet_needs_to_be_simple/js_equality.webp",
+      "size": 24660
+    },
+    {
+      "url": "posts/linux_experience/fuji.webp",
+      "size": 63172
+    },
+    {
+      "url": "posts/linux_experience/neir.webp",
+      "size": 144764
+    },
+    {
+      "url": "posts/perceptron/image.webp",
+      "size": 28660
+    },
+    {
+      "url": "posts/perceptron/perceptron-learning-alg_13_0.webp",
+      "size": 11982
+    },
+    {
+      "url": "posts/perceptron/perceptron-learning-alg_4_0.webp",
+      "size": 9532
+    },
+    {
+      "url": "posts/tf_pt_setup/nvidia-smi.webp",
+      "size": 39382
+    },
+    {
+      "url": "posts/tf_pt_setup/tf.webp",
+      "size": 77084
+    },
+    {
+      "url": "posts/tf_pt_setup/torch.webp",
+      "size": 28840
+    }
+  ]
+}

@@ -1,11 +1,31 @@
 @font-face {
-    font-family: 'JetBrains Mono Nerd Font';
-    src: url('./assets/fonts/JetBrainsMono/JetBrainsMonoNerdFont-Regular.ttf');
+  font-family: 'Maple Mono';
+  src: url('./assets/fonts/MapleMono/MapleMono-VF.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maple Mono';
+  src: url('./assets/fonts/MapleMono/MapleMono-Italic-VF.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Retrospective Nerd Icons';
+  src: url('./assets/fonts/JetBrainsMono/JetBrainsMonoNerdIcons.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
 }
 
 :root {
-  --font-main: 'JetBrains Mono Nerd Font', Helvetica, Arial;
+  --font-main: 'Maple Mono', monospace;
   --icon-size: 1.2rem;
+  --page-width: 720px;
   --space-0: 0;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -21,6 +41,7 @@
   --primary-dim: #8a8a8a;
   --accent-color: #4f4f4f;
   --accent-dim: #e0e0e0;
+  --scanline-opacity: 0.06;
 }
 
 html.dark {
@@ -31,11 +52,12 @@ html.dark {
   --primary-dim: #606060;
   --accent-color: #a0a0a0;
   --accent-dim: #3a3a3a;
+  --scanline-opacity: 0.1;
 }
 
 /* Misc */
 .nerd-icon {
-  font-family: 'JetBrains Mono Nerd Font';
+  font-family: 'Retrospective Nerd Icons';
   font-size: var(--icon-size);
   font-style: normal;
   font-weight: 400;
@@ -44,7 +66,7 @@ html.dark {
 }
 
 .nerd-icon-inline {
-  font-family: 'JetBrains Mono Nerd Font';
+  font-family: 'Retrospective Nerd Icons';
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -67,16 +89,31 @@ html.dark {
 }
 
 body {
-  max-width: 1200px;
+  max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 var(--space-5);
-  font-family: var(--font-main), 'JetBrains Mono Nerd Font', sans-serif;
+  font-family: var(--font-main);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 2;
+  font-size: 17px;
+  line-height: 1.85;
   letter-spacing: 0.01em;
   color: var(--primary-color);
   background-color: var(--bg-color);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: var(--scanline-opacity);
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    var(--primary-color) 4px
+  );
 }
 
 header {
@@ -141,6 +178,30 @@ a:hover {
   opacity: 1;
 }
 
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-3);
+}
+
+.project-disk {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.project-disk-type {
+  color: var(--primary-dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Button */
 .btn {
   font-family: var(--font-main);
@@ -189,7 +250,7 @@ h3, h3 a {
 }
 
 .post-body img {
-  max-width: 70%;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: var(--space-6) auto;
@@ -217,6 +278,7 @@ h3, h3 a {
 .post-body h3,
 .post-body h4 {
   font-weight: 400;
+  line-height: 1.4;
 }
 
 .post-body {
@@ -229,7 +291,6 @@ h3, h3 a {
   margin: 0;
   padding: var(--space-5) 0;
   transition: opacity 0.2s ease, background-color 0.2s ease;
-  border-radius: 10px;
 }
 
 .post-body:has(.post-section:hover) .post-section:not(:hover) {
@@ -306,6 +367,7 @@ div.code-toolbar > .toolbar > .toolbar-item > button {
 
 /* Default copy icon */
 div.code-toolbar > .toolbar > .toolbar-item > button::before {
+  font-family: 'Retrospective Nerd Icons';
   font-size: var(--icon-size) !important;
   content: '\f018f';
 }
@@ -318,6 +380,97 @@ div.code-toolbar > .toolbar > .toolbar-item > button::before {
 
 .social-link {
   text-decoration: none;
+}
+
+/* First-visit archive loader */
+html.archive-loading,
+html.archive-loading body {
+  overflow: hidden;
+}
+
+.archive-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 5vw, 4rem);
+  overflow: hidden;
+  color: var(--primary-color);
+  background: var(--bg-color);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.archive-loader[hidden] {
+  display: none;
+}
+
+.archive-loader.is-complete {
+  opacity: 0;
+  transform: scale(0.995);
+}
+
+.archive-terminal {
+  position: relative;
+  width: min(100%, 760px);
+  padding: clamp(1.25rem, 4vw, 2.5rem) 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.archive-kicker,
+.archive-stats,
+.archive-file {
+  color: var(--primary-dim);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-terminal h1 {
+  margin: var(--space-3) 0 var(--space-6);
+  color: var(--primary-color);
+  font-size: clamp(1.25rem, 4vw, 2.15rem);
+  font-weight: 450;
+  line-height: 1.25;
+}
+
+.archive-readout,
+.archive-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.archive-readout {
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+}
+
+.archive-bar {
+  white-space: nowrap;
+}
+
+.archive-stats {
+  margin-top: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.archive-file {
+  margin-top: var(--space-6);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-transform: none;
+}
+
+.archive-cursor {
+  animation: archive-cursor 0.8s steps(1) infinite;
+}
+
+@keyframes archive-cursor {
+  50% { opacity: 0; }
 }
 
 /* Transitions */
@@ -336,4 +489,49 @@ a, nav a, .btn, .font-select {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0 var(--space-4);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  header {
+    padding: var(--space-6) 0;
+  }
+
+  header > h3 {
+    max-width: 12rem;
+    line-height: 1.35;
+  }
+
+  .post-header {
+    padding-top: var(--space-4);
+  }
+
+  .archive-bar {
+    letter-spacing: -0.08em;
+  }
+
+  .archive-stats {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

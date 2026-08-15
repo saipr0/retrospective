@@ -29,7 +29,7 @@ Recommended to install the versions mentioned in the docs for stability.
 
 Use `nvidia-smi` command to check that CUDA is properly installed. It lists the available GPU cards, as well as processes running on each card.
 
-![](./nvidia-smi.png)
+![](./nvidia-smi.webp)
 
 Verify GPU Install (From official docs)
 
@@ -37,7 +37,7 @@ Verify GPU Install (From official docs)
 python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
-![](./tf.png)
+![](./tf.webp)
 
 ### For Ubuntu version 22.04 (and WSL2)
 
@@ -99,6 +99,6 @@ Relatively new deep learning framework based on Torch for simplicity, ease of us
 ### Setup
 
 Create new conda environment with name 'pt' and run the command after selecting preferences on [Start Locally | PyTorch](https://pytorch.org/get-started/locally/)
-![](./torch.png)
+![](./torch.webp)
 
 > Thank You

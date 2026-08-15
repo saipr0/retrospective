@@ -3,16 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Retrospective — Sai Prabhat Gubbala</title>
     <link href="css/style.css" rel="stylesheet">
     <link id="prism-theme" href="css/prism.css" rel="stylesheet">
     <script>
       if (localStorage.getItem('theme') !== 'light') {
         document.documentElement.classList.add('dark');
       }
+      document.documentElement.classList.add('archive-loading');
     </script>
   </head>
   <body>
+    <div id="archive-loader" class="archive-loader" role="status" aria-live="polite">
+      <div class="archive-terminal">
+        <p class="archive-kicker">RETROSPECTIVE // COLD BOOT</p>
+        <h1 data-loader-status>MOUNTING PERSONAL ARCHIVE</h1>
+        <div class="archive-readout" aria-label="Loading website archive">
+          <span class="archive-bar" data-loader-bar>[░░░░░░░░░░░░░░░░░░░░░░░░░░░░]</span>
+          <span data-loader-percent>000%</span>
+        </div>
+        <div class="archive-stats">
+          <span data-loader-count>0/0 files</span>
+          <span data-loader-bytes>calculating payload</span>
+        </div>
+        <p class="archive-file"><span aria-hidden="true">&gt;</span> <span data-loader-file>reading archive index</span><span class="archive-cursor" aria-hidden="true">_</span></p>
+      </div>
+    </div>
+
     <!-- Home Page -->
     <main id="home" class="page">
       <section>
@@ -22,6 +39,10 @@
       <section>
         <div id="posts-list"></div>
       </section>
+
+      <!-- <section>
+        <div id="projects-list"></div>
+      </section> -->
     </main>
 
     <!-- About Page -->
@@ -38,7 +59,6 @@
 
     <script src="js/lib/marked.min.js"></script>
     <script src="js/lib/prism.js"></script>
-    <script src="js/router.js" type="module"></script>
     <script src="js/main.js" type="module"></script>
   </body>
 </html>
