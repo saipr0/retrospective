@@ -27,6 +27,9 @@ export async function loadAbout() {
 
 const socials = `
 <div class="socials-links">
+	<a class="social-link" href="content/Resume-Sai-Prabhat-Gubbala.pdf" download="Resume-Sai-Prabhat-Gubbala.pdf" aria-label="Download resume" title="Download resume">
+		${icons.resume}
+	</a>
 	<a class="social-link" href="${SOCIAL_LINKS.github}" target="_blank" rel="noopener noreferrer">
 		${icons.github}
 	</a>

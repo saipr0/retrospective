@@ -2,6 +2,8 @@
 I'm Sai. A 2025 graduate. I'm currently working at my first company
 [Tag-N-Trac&#xf46c;](https://www.linkedin.com/company/tag-n-trac/) .
 
+You can download my resume from the [Dossier](#dossier) below.
+
 ## Colophon
 
 Inspired by
