@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Retrospective — Sai Prabhat Gubbala</title>
+    <title>Retrospective // Sai Prabhat Gubbala</title>
     <link href="css/style.css" rel="stylesheet">
     <link id="prism-theme" href="css/prism.css" rel="stylesheet">
     <script>
@@ -14,6 +14,7 @@
     </script>
   </head>
   <body>
+    <!-- Loading Page -->
     <div id="archive-loader" class="archive-loader" role="status" aria-live="polite">
       <div class="archive-terminal">
         <p class="archive-kicker">RETROSPECTIVE // COLD BOOT</p>
@@ -33,11 +34,11 @@
     <!-- Home Page -->
     <main id="home" class="page">
       <section>
-        <div id="home-start"></div>
+        <div id="home-start" class="post-body"></div>
       </section>
 
       <section>
-        <div id="posts-list"></div>
+        <div id="posts-list" class="post-body"></div>
       </section>
 
       <!-- <section>
@@ -47,13 +48,19 @@
 
     <!-- About Page -->
     <main id="about" class="page" style="display: none;">
-      <nav><a href="#home">← Back to Posts</a></nav>
+      <a class="grid-label" href="#home">
+        <span aria-hidden="true">←</span>
+        <span>Back to Posts</span>
+      </a>
       <article id="about-content"></article>
     </main>
 
     <!-- Post Detail Page -->
     <main id="post-detail" class="page" style="display: none;">
-      <nav><a href="#home">← Back to Posts</a></nav>
+      <a class="grid-label" href="#home">
+        <span aria-hidden="true">←</span>
+        <span>Back to Posts</span>
+      </a>
       <article id="post-content"></article>
     </main>
 

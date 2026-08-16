@@ -1,10 +1,11 @@
 export function createNavbar() {
   return `
     <header>
-      <h3><a href="#home">Sai Prabhat Gubbala</a></h3>
-      <nav>
+      <a class="site-banner" href="#home">retrospective // sai prabhat gubbala</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <button id="theme-toggle" class="btn btn-icon"></button>
+        <button id="theme-toggle" class="btn btn-icon" type="button"></button>
       </nav>
     </header>
   `;

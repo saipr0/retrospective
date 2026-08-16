@@ -1,5 +1,5 @@
 {
-  "totalBytes": 1561651,
+  "totalBytes": 1549762,
   "assets": [
     {
       "url": "content/about.md",
@@ -27,11 +27,11 @@
     },
     {
       "url": "css/prism-dark.css",
-      "size": 21297
+      "size": 1876
     },
     {
       "url": "js/data/posts.json",
-      "size": 38664
+      "size": 46196
     },
     {
       "url": "posts/first_note/retro-spec.gif",

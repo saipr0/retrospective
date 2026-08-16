@@ -1,4 +1,4 @@
-import { icons } from './svg.js';
+import { icons } from './icons.js';
 
 export function initTheme() {
   function switchPrismTheme(isDark) {

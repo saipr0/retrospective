@@ -1,6 +1,6 @@
 import { initAboutTheme } from '../theme.js';
-import { makeLinksExternal } from '../utils.js';
-import { icons } from '../svg.js';
+import { makeLinksExternal, wrapNerdIcons } from '../utils.js';
+import { icons } from '../icons.js';
 
 const SOCIAL_LINKS = {
   github: 'https://github.com/saipr0',
@@ -21,6 +21,7 @@ export async function loadAbout() {
   `;
 
   initAboutTheme();
+  wrapNerdIcons(document.getElementById('about-content'));
   makeLinksExternal('#about-content');
 }
 

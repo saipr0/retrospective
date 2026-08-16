@@ -1,5 +1,6 @@
-import { projects } from '../data/projects.js';
-import { fetchPosts } from '../data/posts.js';
+import { projects } from '../projects.js';
+import { fetchPosts } from '../posts.js';
+import { formatPublishDate } from '../utils.js';
 
 function renderProjects() {
   const list = document.getElementById('projects-list');
@@ -24,18 +25,18 @@ export async function loadHome() {
   try {
     const start = document.getElementById('home-start');
     start.innerHTML = `
-      <h3 id="hello-title"><span class="nerd-icon">&#xf256;</span> Hello!</h3>
+      <h2 id="hello-title">Hello!</h2>
       <p>Welcome to my web notepad for all the things I try.</p>
     `
     const posts = await fetchPosts();
     const list = document.getElementById('posts-list');
     list.innerHTML = `
-      <h3><span class="nerd-icon">&#xf15c;</span> Posts</h3>
+      <h2>Posts</h2>
       <div class="posts-list-items">
         ${posts.map(p => `
         <article>
           <p class="post-meta">
-            ${p.publishDate}&nbsp;
+            <span>${formatPublishDate(p.publishDate)}</span>
             <a href="#post-detail?id=${p.id}">${p.title}</a>
           </p>
         </article>

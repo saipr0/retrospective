@@ -1,42 +1,10 @@
-import { makeLinksExternal } from '../utils.js';
-import { fetchPosts } from '../data/posts.js';
+import { formatPublishDate, makeLinksExternal, wrapNerdIcons } from '../utils.js';
+import { fetchPosts } from '../posts.js';
 
 // image paths in markdown
 function fixImagePaths(content, postFolder) {
   return content.replace(/!\[([^\]]*)\]\(\.\/([^)]+)\)/g, `![$1](posts/${postFolder}/$2)`)
     .replace(/src="\.\/([^"]+)"/g, `src="posts/${postFolder}/$1"`);
-}
-
-function wrapNerdIcons(root) {
-  const iconPattern = /[\uE000-\uF8FF]/;
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  const textNodes = [];
-
-  while (walker.nextNode()) {
-    if (iconPattern.test(walker.currentNode.textContent)) {
-      textNodes.push(walker.currentNode);
-    }
-  }
-
-  textNodes.forEach(node => {
-    const fragment = document.createDocumentFragment();
-    const parts = node.textContent.split(/([\uE000-\uF8FF])/);
-
-    parts.forEach(part => {
-      if (!part) return;
-
-      if (iconPattern.test(part)) {
-        const icon = document.createElement('span');
-        icon.className = 'nerd-icon-inline';
-        icon.textContent = part;
-        fragment.appendChild(icon);
-      } else {
-        fragment.appendChild(document.createTextNode(part));
-      }
-    });
-
-    node.parentNode.replaceChild(fragment, node);
-  });
 }
 
 function wrapPostSections(root) {
@@ -85,7 +53,7 @@ async function loadAndDisplayPost(postId) {
       <div class="post-header">
         <div class="post-header-content">
           <h1>${title}</h1>
-          <p class="post-meta">${publishDate}</p>
+          <p class="post-meta">${formatPublishDate(publishDate)}</p>
         </div>
       </div>
       <div class="post-body">${htmlContent}</div>
