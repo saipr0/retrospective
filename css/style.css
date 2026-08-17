@@ -268,7 +268,6 @@ a:hover {
 }
 
 .posts-list-items article:hover {
-  transform: scale(1.05);
   opacity: 1;
 }
 
@@ -489,14 +488,16 @@ div.code-toolbar > .toolbar > .toolbar-item > button::before {
   content: '\f018f';
 }
 
-/* Social Links */
-.socials-links {
-  display: flex;
-  gap: var(--space-4);
+/* Dossier */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
 }
 
-.social-link {
-  text-decoration: none;
+.dossier-link {
+  margin-bottom: 0;
 }
 
 /* First-visit archive loader */
@@ -632,6 +633,10 @@ a, nav a, .btn, .font-select {
     align-items: flex-start;
     flex-direction: column;
     gap: 0;
+  }
+
+  .dossier-grid {
+    grid-template-columns: 1fr;
   }
 }
 

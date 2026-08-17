@@ -26,21 +26,26 @@ export async function loadAbout() {
 }
 
 const socials = `
-<div class="socials-links">
-	<a class="social-link" href="content/Resume-Sai-Prabhat-Gubbala.pdf" download="Resume-Sai-Prabhat-Gubbala.pdf" aria-label="Download resume" title="Download resume">
-		${icons.resume}
-	</a>
-	<a class="social-link" href="${SOCIAL_LINKS.github}" target="_blank" rel="noopener noreferrer">
-		${icons.github}
-	</a>
-	<a class="social-link" href="mailto:${SOCIAL_LINKS.email}">
-		${icons.email}
-	</a>
-	<a class="social-link" href="${SOCIAL_LINKS.twitter}" target="_blank" rel="noopener noreferrer">
-		${icons.twitter}
-	</a>
-	<a class="social-link" href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer">
-		${icons.linkedin}
-	</a>
+<div class="dossier-grid">
+    <a class="grid-label dossier-link" href="content/Resume-Sai-Prabhat-Gubbala.pdf" download="Resume-Sai-Prabhat-Gubbala.pdf" aria-label="Download resume" title="Download resume">
+      <span aria-hidden="true">${icons.resume}</span>
+      <span>Resume</span>
+    </a>
+    <a class="grid-label dossier-link" href="${SOCIAL_LINKS.github}" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true">${icons.github}</span>
+      <span>GitHub</span>
+    </a>
+    <a class="grid-label dossier-link" href="mailto:${SOCIAL_LINKS.email}">
+      <span aria-hidden="true">${icons.email}</span>
+      <span>Email</span>
+    </a>
+    <a class="grid-label dossier-link" href="${SOCIAL_LINKS.twitter}" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true">${icons.twitter}</span>
+      <span>X / Twitter</span>
+    </a>
+    <a class="grid-label dossier-link" href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true">${icons.linkedin}</span>
+      <span>LinkedIn</span>
+    </a>
 </div>
 `;
