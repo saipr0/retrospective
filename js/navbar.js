@@ -1,7 +1,10 @@
 export function createNavbar() {
   return `
     <header>
-      <a class="site-banner" href="#home">retrospective <span>//</span> sai prabhat</a>
+      <a class="site-banner" href="#home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>retrospective <span>//</span> sai prabhat</span>
+      </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
