@@ -100,6 +100,16 @@ html.dark {
   cursor: none;
 }
 
+@media (pointer: coarse) {
+  * {
+    cursor: auto;
+  }
+
+  .site-cursor {
+    display: none;
+  }
+}
+
 body {
   max-width: var(--page-width);
   margin: 0 auto;
