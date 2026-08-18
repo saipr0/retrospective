@@ -1,9 +1,25 @@
 {
-  "totalBytes": 1549812,
+  "totalBytes": 1562413,
   "assets": [
     {
       "url": "content/about.md",
       "size": 678
+    },
+    {
+      "url": "css/assets/cursors/default-light.svg",
+      "size": 1901
+    },
+    {
+      "url": "css/assets/cursors/default.svg",
+      "size": 1901
+    },
+    {
+      "url": "css/assets/cursors/pointer-light.svg",
+      "size": 3039
+    },
+    {
+      "url": "css/assets/cursors/pointer.svg",
+      "size": 3039
     },
     {
       "url": "css/assets/fonts/JetBrainsMono/JetBrainsMonoNerdIcons.ttf",
@@ -16,6 +32,10 @@
     {
       "url": "css/assets/fonts/MapleMono/MapleMono-VF.woff2",
       "size": 130908
+    },
+    {
+      "url": "css/assets/images/logo.svg",
+      "size": 2721
     },
     {
       "url": "css/assets/images/social-card-2.png",
