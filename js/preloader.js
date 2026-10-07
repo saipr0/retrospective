@@ -1,18 +1,8 @@
 const MANIFEST_URL = 'js/data/archive-manifest.json';
 const BOOT_TIME = 2400;
-const BAR_SIZE = 28;
-const PHASES = [
-  'reading archive index',
-  'mapping notes and metadata',
-  'buffering image archive',
-  'warming local cache',
-  'verifying archive checksum'
-];
+const BAR_SIZE = 25;
 
 const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
-const formatBytes = bytes => bytes < 1024 * 1024
-  ? `${Math.round(bytes / 1024)} KiB`
-  : `${(bytes / 1024 / 1024).toFixed(1)} MiB`;
 
 async function fetchManifest() {
   const response = await fetch(MANIFEST_URL, { cache: 'no-cache' });
@@ -31,25 +21,15 @@ async function syncArchive(manifest, progress) {
   }));
 }
 
-function renderProgress(loader, manifest, ratio) {
-  const percentage = Math.round(ratio * 100);
+function renderProgress(loader, ratio) {
   const filled = Math.round(ratio * BAR_SIZE);
-  const phase = PHASES[Math.min(PHASES.length - 1, Math.floor(ratio * PHASES.length))];
-
   loader.querySelector('[data-loader-bar]').textContent =
-    `[${'█'.repeat(filled)}${'░'.repeat(BAR_SIZE - filled)}]`;
-  loader.querySelector('[data-loader-percent]').textContent =
-    `${String(percentage).padStart(3, '0')}%`;
-  loader.querySelector('[data-loader-count]').textContent =
-    `${Math.round(manifest.assets.length * ratio)}/${manifest.assets.length} files`;
-  loader.querySelector('[data-loader-bytes]').textContent =
-    `${formatBytes(manifest.totalBytes * ratio)} / ${formatBytes(manifest.totalBytes)}`;
-  loader.querySelector('[data-loader-file]').textContent = ratio === 1 ? 'archive ready' : phase;
+    `${'█'.repeat(filled)}${'░'.repeat(BAR_SIZE - filled)}`;
 }
 
-function animateProgress(loader, manifest, progress) {
+function animateProgress(loader, progress) {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    renderProgress(loader, manifest, 1);
+    renderProgress(loader, 1);
     return Promise.resolve();
   }
 
@@ -63,10 +43,10 @@ function animateProgress(loader, manifest, progress) {
       progress.visible += (target - progress.visible) * 0.15;
 
       if (progress.done && elapsed === 1 && progress.visible > 0.995) {
-        renderProgress(loader, manifest, 1);
+        renderProgress(loader, 1);
         resolve();
       } else {
-        renderProgress(loader, manifest, progress.visible);
+        renderProgress(loader, progress.visible);
         requestAnimationFrame(draw);
       }
     }
@@ -88,22 +68,17 @@ export async function prepareArchive() {
   try {
     const manifest = await fetchManifest();
     const progress = { actual: 0, visible: 0, done: false };
-    const animation = animateProgress(loader, manifest, progress);
-    let syncComplete = true;
+    const animation = animateProgress(loader, progress);
 
     try {
       await syncArchive(manifest, progress);
     } catch (error) {
-      syncComplete = false;
       console.warn('Archive sync skipped:', error);
     }
 
     progress.actual = 1;
     progress.done = true;
     await animation;
-
-    loader.querySelector('[data-loader-status]').textContent =
-      syncComplete ? 'SYNC COMPLETE' : 'SYNC PARTIAL';
     await wait(420);
   } catch (error) {
     console.warn('Archive sync skipped:', error);

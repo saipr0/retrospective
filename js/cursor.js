@@ -7,5 +7,5 @@ export const moveCursor = (e) => {
   const isHoveringClickable = Boolean(e.target.closest(clickableSelector));
 
   siteCursor.classList.toggle('is-hovering', isHoveringClickable);
-  siteCursor.style.transform = `translate3d(${mouseX - 11}px, ${mouseY - 9}px, 0)`
+  siteCursor.style.transform = `translate3d(${mouseX - 8}px, ${mouseY - 7}px, 0)`
 }

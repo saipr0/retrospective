@@ -20,10 +20,11 @@ async function showPage(pageId) {
 
   const targetPage = document.getElementById(pageId);
   if (targetPage) targetPage.style.display = 'block';
+  document.querySelector('.prompt-path').textContent =
+    pageId === 'home' ? '~' : pageId === 'about' ? '~/about' : '~/posts';
 
-  const activePage = pageId === 'about' ? 'about' : 'home';
   document.querySelectorAll('.site-nav a').forEach(link => {
-    link.setAttribute('aria-current', link.hash === `#${activePage}` ? 'page' : 'false');
+    link.setAttribute('aria-current', link.hash === `#${pageId}` ? 'page' : 'false');
   });
 }
 
